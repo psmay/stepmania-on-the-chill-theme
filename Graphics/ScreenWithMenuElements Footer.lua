@@ -6,7 +6,7 @@ t[#t+1] = Def.Quad {
 
 t[#t+1] = LoadActor(THEME:GetPathG("ScreenWithMenuElements","header/Header")) .. {
 	InitCommand=cmd(y,-48;vertalign,bottom;zoomtowidth,SCREEN_WIDTH);
-	OnCommand=cmd(zoomy,-1;diffuse,color("#ffd400"));
+	OnCommand=cmd(zoomy,-1;diffuse,color("#0000ff"));
 };
 
 return t;
