@@ -2,8 +2,8 @@ local gc = Var("GameCommand");
 
 local string_name = gc:GetText();
 local string_expl = THEME:GetString("StyleType", gc:GetStyle():GetStyleType());
-local icon_color = color("#FFCB05");
-local icon_color2 = color("#F0BA00");
+local icon_color = color("#0044FF");
+local icon_color2 = color("#FFFFFF");
 
 local t = Def.ActorFrame {};
 t[#t+1] = Def.ActorFrame { 
