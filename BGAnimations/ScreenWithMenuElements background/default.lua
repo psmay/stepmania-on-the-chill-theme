@@ -5,13 +5,22 @@ t[#t+1] = Def.ActorFrame {
   InitCommand=cmd(Center);
 	Def.Quad {
 		InitCommand=cmd(scaletoclipped,SCREEN_WIDTH,SCREEN_HEIGHT);
-		OnCommand=cmd(diffuse,color("#FFCB05");diffusebottomedge,color("#F0BA00"));
+		OnCommand=cmd(diffuse,color("#000000"));
 	};
 	Def.ActorFrame {
 		InitCommand=cmd(hide_if,hideFancyElements;);
-		LoadActor("_checkerboard") .. {
-			InitCommand=cmd(rotationy,0;rotationz,0;rotationx,-90/4*3.5;zoomto,SCREEN_WIDTH*2,SCREEN_HEIGHT*2;customtexturerect,0,0,SCREEN_WIDTH*4/256,SCREEN_HEIGHT*4/256);
-			OnCommand=cmd(texcoordvelocity,0,0.25;diffuse,color("#ffd400");fadetop,1);
+		-- These actors implement a parallax cloud effect
+		LoadActor("horizontal-clouds-1") .. {
+			InitCommand=cmd(x,SCREEN_CENTER_X;y,0;zoomtoheight,SCREEN_HEIGHT);
+			OnCommand=cmd(texcoordvelocity,0.01,0.0;diffusecolor,color("#0000ff");diffusealpha,0.5);
+		};
+		LoadActor("horizontal-clouds-2") .. {
+			InitCommand=cmd(x,SCREEN_CENTER_X;y,0;zoomtoheight,SCREEN_HEIGHT);
+			OnCommand=cmd(texcoordvelocity,0.02,0.0;diffusecolor,color("#4444ff");diffusealpha,0.4);
+		};
+		LoadActor("horizontal-clouds-3") .. {
+			InitCommand=cmd(x,SCREEN_CENTER_X;y,0;zoomtoheight,SCREEN_HEIGHT);
+			OnCommand=cmd(texcoordvelocity,0.03,0.0;diffusecolor,color("#8888ff");diffusealpha,0.3);
 		};
 	};
 	LoadActor("_particleLoader") .. {
