@@ -1,5 +1,7 @@
-local t = Def.ActorFrame {};
 
+local halftone_arrow_size = SCREEN_HEIGHT * 1.2;
+
+local t = Def.ActorFrame {};
 t[#t+1] = Def.ActorFrame {
   FOV=90;
   InitCommand=cmd(Center);
@@ -12,15 +14,21 @@ t[#t+1] = Def.ActorFrame {
 		-- These actors implement a parallax cloud effect
 		LoadActor("horizontal-clouds-1") .. {
 			InitCommand=cmd(x,SCREEN_CENTER_X;y,0;zoomtoheight,SCREEN_HEIGHT);
-			OnCommand=cmd(texcoordvelocity,0.01,0.0;diffusecolor,color("#0000ff");diffusealpha,0.5);
+			OnCommand=cmd(texcoordvelocity,0.02,0.0;diffusecolor,color("#000088");diffusealpha,0.3);
 		};
 		LoadActor("horizontal-clouds-2") .. {
 			InitCommand=cmd(x,SCREEN_CENTER_X;y,0;zoomtoheight,SCREEN_HEIGHT);
-			OnCommand=cmd(texcoordvelocity,0.02,0.0;diffusecolor,color("#4444ff");diffusealpha,0.4);
+			OnCommand=cmd(texcoordvelocity,0.04,0.0;diffusecolor,color("#0000ff");diffusealpha,0.3);
 		};
 		LoadActor("horizontal-clouds-3") .. {
 			InitCommand=cmd(x,SCREEN_CENTER_X;y,0;zoomtoheight,SCREEN_HEIGHT);
-			OnCommand=cmd(texcoordvelocity,0.03,0.0;diffusecolor,color("#8888ff");diffusealpha,0.3);
+			OnCommand=cmd(texcoordvelocity,0.06,0.0;diffusecolor,color("#0088ff");diffusealpha,0.3);
+		};
+	};
+	Def.ActorFrame {
+		LoadActor("halftone-arrow") .. {
+			InitCommand=cmd(zoomto,halftone_arrow_size,halftone_arrow_size);
+			OnCommand=cmd(diffusealpha,0.0;smooth,0.5;diffusealpha,0.1);
 		};
 	};
 	LoadActor("_particleLoader") .. {
