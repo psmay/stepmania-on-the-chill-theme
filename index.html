@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="StepMania: On The Chill : StepMania 5 default-based theme with new logo artwork and blue color scheme">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>StepMania: On The Chill</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/psmay/stepmania-on-the-chill-theme">View on GitHub</a>
+
+          <h1 id="project_title">StepMania: On The Chill</h1>
+          <h2 id="project_tagline">StepMania 5 default-based theme with new logo artwork and blue color scheme</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/psmay/stepmania-on-the-chill-theme/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/psmay/stepmania-on-the-chill-theme/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><strong>StepMania: On The Chill</strong> is a theme for StepMania 5. It is based on the default theme by Midiman, and is actually intended to remain close enough to track most fixes/updates that apply to the original.</p>
+
+<h2>
+<a id="the-original-theme" class="anchor" href="#the-original-theme" aria-hidden="true"><span class="octicon octicon-link"></span></a>The original theme</h2>
+
+<p>This is a fork of <a href="https://github.com/psmay/stepmania-default-theme">a repo I started to track only the <code>Themes/default</code> directory within the main StepMania project</a>.</p>
+
+<h2>
+<a id="differences-from-the-original" class="anchor" href="#differences-from-the-original" aria-hidden="true"><span class="octicon octicon-link"></span></a>Differences from the original</h2>
+
+<p>The notable changes are these:</p>
+
+<ul>
+<li>Blueness—blue, blue, and more blue. Nearly everything in the fiery yellow/orange characteristic of the default theme has been recolored to icy blues (and, where contrast is needed, snowy whites) here.
+
+<ul>
+<li>There are still spots I've missed; this is a work in progress.</li>
+</ul>
+</li>
+<li>New artwork (see SVG files in <code>_assets</code>) to coincide with an in-progress cabinet artwork project I have going.
+
+<ul>
+<li>Credits screen logos.
+
+<ul>
+<li>To represent the StepMania project in general, lightly retouched/simplified vectorization of Plaguefox's well-known logotype.
+
+<ul>
+<li>(This logo is to credit producers of the game and does not signify their endorsement of this theme.)</li>
+<li>The end caps of the strokes and the dot on the "i" are circular rather than elliptical.</li>
+<li>The stroke width was played with, though the result is similar to the original.</li>
+<li>Tried a novel composition of the red up-right arrow icon with this logotype.
+
+<ul>
+<li>(which I like, but you can decide whether it's a hit or a miss.)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>To represent SSC, lightly simplified vectorization of the SSC logo.
+
+<ul>
+<li>(This logo is to credit producers of the game and does not signify their endorsement of this theme.)</li>
+<li>The logo is geometrically simple enough that my version has to be held quite close to the original to notice any differences.</li>
+</ul>
+</li>
+<li>To represent my contribution, the "rhythm.hfgk" logo.</li>
+</ul>
+</li>
+<li>"Advanced Rhythm Simulation — StepMania: On The Chill" logotype.
+
+<ul>
+<li>"Advanced Rhythm Simulation" (as opposed to "Advanced Rhythm Game" present on some logos) adds a touch of Engrishness to the title.</li>
+<li>Uses the StepTech typeface (see below).</li>
+</ul>
+</li>
+<li>Up-right icon arrow rendered in halftone (for a touch of early-DDR-reminiscent flair).</li>
+</ul>
+</li>
+<li>Horizontally parallax-scrolled blue clouds replace the chessboard pattern for menu screen backgrounds.</li>
+<li>Vertically parallax-scrolled blue clouds replace the scrolling grid pattern for How To Play screen background.</li>
+</ul>
+
+<h2>
+<a id="still-to-do" class="anchor" href="#still-to-do" aria-hidden="true"><span class="octicon octicon-link"></span></a>Still to do</h2>
+
+<ul>
+<li>Change <code>Common fallback background.png</code> to stick out less. It shouldn't actually say "no background"; it should show a generic background that goes nicely with the rest of the screen.</li>
+<li>Change <code>Common splash.png</code> to one of our new logotypes.</li>
+<li>Change the larger text-based images (like "1st Stage", "Game Over", but not like "Perfect", "OK!") to use StepTech typeface (see below), perhaps combining with a perspective effect as with the logotype itself.
+
+<ul>
+<li>Where it makes sense stylistically, use all-lowercase text as with the logotype.</li>
+</ul>
+</li>
+<li>Create a bitmap font from StepTech to be used in the game.</li>
+</ul>
+
+<h3>
+<a id="in-the-upstream" class="anchor" href="#in-the-upstream" aria-hidden="true"><span class="octicon octicon-link"></span></a>In the upstream</h3>
+
+<p>Problems that could use some addressing in the original theme include:</p>
+
+<ul>
+<li>Many .png resources appear to be unused in the current version of the theme.
+
+<ul>
+<li>The <code>_SelectIcon*.png</code> files, for example, are now automatically rendered from i18n'd text plus a generic background image.</li>
+</ul>
+</li>
+<li>There's an MP3 file in <code>Sounds</code> (and it should probably be removed instead of converted).</li>
+<li>
+<code>_howto *.png</code> should be updated; they show screens of the old <code>sm-ssc</code> project page.</li>
+<li>Add higher-res versions of the existing sans-serif bitmap fonts. There are places where text is displayed so much larger than the intended scale that the game begins to lose its polish.</li>
+</ul>
+
+<h2>
+<a id="steptech-typeface" class="anchor" href="#steptech-typeface" aria-hidden="true"><span class="octicon octicon-link"></span></a>StepTech typeface</h2>
+
+<p>The typeface used for the logotype has a working title of "StepTech" (or "StepTech 1st Mix"). It was entirely created by me and does not currently exist in any form other than raw glyphs in an SVG file. I've tried to work on making it available as an actual font (e.g. using FontForge), but there are some catches to the process. This font being based very strictly on a particular grid, and me being a stickler for precision, there has been room for chafing. Also, making the uppercase glyphs and glyphs with combining marks look as good as the lowercase is difficult in places.</p>
+
+<h2>
+<a id="credits-and-license" class="anchor" href="#credits-and-license" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits and license</h2>
+
+<h3>
+<a id="original-theme" class="anchor" href="#original-theme" aria-hidden="true"><span class="octicon octicon-link"></span></a>Original theme</h3>
+
+<p>This theme is based heavily on the StepMania 5 default theme by Midiman of SSC. Being part of the main StepMania project, it is presumably under the MIT license.</p>
+
+<h3>
+<a id="logotypes" class="anchor" href="#logotypes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Logotypes</h3>
+
+<h4>
+<a id="smotc" class="anchor" href="#smotc" aria-hidden="true"><span class="octicon octicon-link"></span></a>SM:OTC</h4>
+
+<p>"Advanced Rhythm Simulation — StepMania: On The Chill" logotype copyright © 2014 Peter S. May</p>
+
+<p>This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 United States License. To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-sa/3.0/us/">http://creativecommons.org/licenses/by-sa/3.0/us/</a> or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.</p>
+
+<h4>
+<a id="derived-logos" class="anchor" href="#derived-logos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Derived logos</h4>
+
+<h5>
+<a id="common-splashpng-plaguefox-arrowworm-logo" class="anchor" href="#common-splashpng-plaguefox-arrowworm-logo" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<code>Common Splash.png</code> (Plaguefox arrow/"worm" logo)</h5>
+
+<p>Some artwork for this theme is derived from the default theme's <code>Common Splash.png</code>. That image includes among its elements:</p>
+
+<ul>
+<li>A red up- and right-pointed arrow drawn in broad strokes with circular end caps.</li>
+<li>A blue logotype consisting of the word "stepmania", in lower case, using a round-cornered, squarish typeface with elliptical end caps.</li>
+</ul>
+
+<p>The credits screen and part of the concept artwork contains a logo using the same elements with simplifications and a different arrangement realized in vectors (SVG):</p>
+
+<ul>
+<li>The new logotype uses circular end caps rather than elliptical.</li>
+<li>The new logotype's stroke width varies slightly from the original.</li>
+<li>The arrow element is enlarged and moved behind the logotype.</li>
+<li>Broad white outlines are added to the elements.</li>
+<li>The sheen effects drawn on the original elements are replaced with simple gradient fills.</li>
+</ul>
+
+<p>Additionally, the generic background and part of the concept artwork contains a logo using the arrow element of the logo having been encircled and rendered with a halftone effect.</p>
+
+<p>The original artwork either was created by or derives heavily from a logo produced by Plaguefox, and presumably belongs to the StepMania project at large. It is used by the StepMania project and is thereby presumably MIT-licensed, though it is not clear by whom.</p>
+
+<p>I have obtained no special permission to use or modify the work and I do not assert any legal claim that I am the owner; consult the owner of the original artwork for permission to use my derived variant.</p>
+
+<h5>
+<a id="ssc" class="anchor" href="#ssc" aria-hidden="true"><span class="octicon octicon-link"></span></a>SSC</h5>
+
+<p>The credits screen and part of the concept artwork contains a logo for SSC (that is, <a href="http://ssc.ajworld.net/">the spinal shark collective</a>) that is based on the original <code>ssc (doubleres).png</code> (from SM5's <code>_fallback</code> theme) with minor simplifications realized in vectors (SVG).</p>
+
+<p>The original artwork belongs to SSC. It is used by the StepMania project, but given that it is the logo of a group it should probably be treated more as a trademark than a copyrightable work—that is, even if modifying the artwork is legal, using it in a way for which they haven't given explicit permission may be considered bad faith (or, in a broader sense, illegal). My inclusion of it here is to give the group credit for their part in producing the game, and is placed so that it won't be mistaken as something else (such as an endorsement of this theme).</p>
+
+<p>I have obtained no special permission to use or modify the work and I do not assert any legal claim that I am the owner; consult the owner of the original artwork for permission to use my derived variant.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">StepMania: On The Chill maintained by <a href="https://github.com/psmay">psmay</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
