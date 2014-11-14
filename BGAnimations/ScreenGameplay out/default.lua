@@ -1,9 +1,23 @@
 local raveChildren
 
+local initialBottomCrop = 1
+local initialBottomFade = 1
+local enterTransitionWait = 0.5
+local enterTransitionDuration = 0.5
+local enteredBottomCrop = 0
+local enteredBottomFade = 0
+local exitTransitionWait = 1.75
+local exitTransitionDuration = 0.25
+local exitedAlpha = 0
+
+local messageTextInit = cmd(Center;cropbottom,initialBottomCrop;fadebottom,initialBottomFade;);
+local messageTextOn = cmd(sleep,enterTransitionWait;linear,enterTransitionDuration;cropbottom,enteredBottomCrop;fadebottom,enteredBottomFade;sleep,exitTransitionWait;linear,exitTransitionDuration;diffusealpha,exitedAlpha);
+
+
 local bg = Def.ActorFrame{
 	Def.Quad{
 		InitCommand=cmd(FullScreen;diffuse,color("0,0,0,0"));
-		OnCommand=cmd(linear,5;diffusealpha,1);
+		OnCommand=cmd(linear,1;diffusealpha,1);
 	};
 
 	Def.ActorFrame{
@@ -31,18 +45,29 @@ local bg = Def.ActorFrame{
 
 		LoadActor(THEME:GetPathG("_rave result","P1"))..{
 			Name="P1Win";
-			InitCommand=cmd(Center;cropbottom,1;fadebottom,1;);
-			OnCommand=cmd(sleep,2;linear,0.5;cropbottom,0;fadebottom,0;sleep,1.75;linear,0.25;diffusealpha,0);
+			InitCommand=messageTextInit;
+			OnCommand=messageTextOn;
 		};
 		LoadActor(THEME:GetPathG("_rave result","P2"))..{
 			Name="P2Win";
-			InitCommand=cmd(Center;cropbottom,1;fadebottom,1;);
-			OnCommand=cmd(sleep,2;linear,0.5;cropbottom,0;fadebottom,0;sleep,1.75;linear,0.25;diffusealpha,0);
+			InitCommand=messageTextInit;
+			OnCommand=messageTextOn;
 		};
 		LoadActor(THEME:GetPathG("_rave result","draw"))..{
 			Name="Draw";
-			InitCommand=cmd(Center;cropbottom,1;fadebottom,1;);
-			OnCommand=cmd(sleep,2;linear,0.5;cropbottom,0;fadebottom,0;sleep,1.75;linear,0.25;diffusealpha,0);
+			InitCommand=messageTextInit;
+			OnCommand=messageTextOn;
+		};
+	};
+
+	Def.ActorFrame{
+		InitCommand=function(self)
+			self:visible(GAMESTATE:GetPlayMode() ~= 'PlayMode_Rave')
+		end;
+		
+		LoadActor("cleared")..{
+			InitCommand=messageTextInit;
+			OnCommand=messageTextOn;
 		};
 	};
 };
