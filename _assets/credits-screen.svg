@@ -187,7 +187,7 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="452.42248"
+     inkscape:cx="458.13677"
      inkscape:cy="145.02978"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -205,7 +205,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -216,7 +216,7 @@
      transform="translate(0,-284.36218)">
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Franklin Gothic Demi;-inkscape-font-specification:Franklin Gothic Demi"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Orbitron;-inkscape-font-specification:Orbitron Heavy"
        x="511.31641"
        y="346.69226"
        id="text2985"
@@ -224,7 +224,7 @@
          sodipodi:role="line"
          id="tspan2987"
          x="511.31641"
-         y="346.69226">GAME SOFTWARE DEVELOPMENT</tspan></text>
+         y="346.69226">GAME SOFTWARE AND ORIGINAL THEME</tspan></text>
     <g
        id="g3407"
        transform="translate(-37.857342,-35.259777)">
@@ -368,7 +368,7 @@
        id="text3249"
        y="619.23621"
        x="511.20416"
-       style="font-size:47.24336624px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Franklin Gothic Demi;-inkscape-font-specification:Franklin Gothic Demi"
+       style="font-size:47.24336624px;font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Orbitron;-inkscape-font-specification:Orbitron Heavy"
        xml:space="preserve"><tspan
          y="619.23621"
          x="511.20416"
@@ -379,7 +379,7 @@
        transform="translate(0,-80.00025)">
       <text
          xml:space="preserve"
-         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Franklin Gothic Demi;-inkscape-font-specification:Franklin Gothic Demi"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Orbitron;-inkscape-font-specification:Orbitron Heavy"
          x="510.90625"
          y="796.69226"
          id="text2989"
@@ -387,13 +387,13 @@
            sodipodi:role="line"
            id="tspan2991"
            x="510.90625"
-           y="796.69226">HARDWARE AND CABINET ARTWORK</tspan></text>
+           y="796.69226">NEW THEME DESIGN AND ARTWORK</tspan></text>
       <text
          sodipodi:linespacing="125%"
          id="text3253"
          y="989.08441"
          x="511.22296"
-         style="font-size:46.12612534px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Franklin Gothic Demi;-inkscape-font-specification:Franklin Gothic Demi"
+         style="font-size:46.12612534px;font-style:normal;font-variant:normal;font-weight:900;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Orbitron;-inkscape-font-specification:Orbitron Heavy"
          xml:space="preserve"><tspan
            y="989.08441"
            x="511.22296"
