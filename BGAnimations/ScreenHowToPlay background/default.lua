@@ -1,20 +1,27 @@
+
+local base_cloud_speed = 0.010;
+
 return Def.ActorFrame {
 	InitCommand=cmd(hide_if,hideFancyElements;);
 	Def.Quad {
 		InitCommand=cmd(scaletoclipped,SCREEN_WIDTH,SCREEN_HEIGHT);
-		OnCommand=cmd(diffuse,color("#000000"));
+		OnCommand=cmd(diffuse,color("#000044"));
 	};	
 	-- These actors implement a parallax cloud effect
-	LoadActor("vertical-clouds-1") .. {
+	LoadActor("backdrop-clouds") .. {
 		InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH);
-		OnCommand=cmd(texcoordvelocity,0.0,0.10;diffusecolor,color("#0000ff");diffusealpha,0.5);
+		OnCommand=cmd(texcoordvelocity,0.0,base_cloud_speed*1);
 	};
-	LoadActor("vertical-clouds-2") .. {
+	LoadActor("sparse-clouds-1") .. {
 		InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH);
-		OnCommand=cmd(texcoordvelocity,0.0,0.02;diffusecolor,color("#4444ff");diffusealpha,0.4);
+		OnCommand=cmd(texcoordvelocity,0.0,base_cloud_speed*2);
 	};
-	LoadActor("vertical-clouds-3") .. {
+	LoadActor("sparse-clouds-2") .. {
 		InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH);
-		OnCommand=cmd(texcoordvelocity,0.0,0.03;diffusecolor,color("#8888ff");diffusealpha,0.3);
+		OnCommand=cmd(texcoordvelocity,0.0,base_cloud_speed*3);
+	};
+	LoadActor("sparse-clouds-3") .. {
+		InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH);
+		OnCommand=cmd(texcoordvelocity,0.0,base_cloud_speed*4);
 	};
 };
