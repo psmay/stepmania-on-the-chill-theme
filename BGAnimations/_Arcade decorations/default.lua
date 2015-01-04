@@ -11,7 +11,7 @@ t[#t+1] = Def.ActorFrame {
 	LoadActor(THEME:GetPathG("OptionRowExit","Frame")) .. {
 		InitCommand=cmd(diffuse,Color("Orange");diffusealpha,0.35);
 	};
-	LoadFont("Common Normal") .. {
+	LoadFont("Credits text") .. {
 		InitCommand=cmd(zoom,0.75;shadowlength,1;glowshift;strokecolor,Color("Outline");diffuse,Color("Orange");diffusetopedge,Color("Yellow");textglowmode,'TextGlowMode_Inner');
 		Text="...";
 		OnCommand=cmd(playcommand,"Refresh");
@@ -21,9 +21,9 @@ t[#t+1] = Def.ActorFrame {
 			local bCanPlay = GAMESTATE:EnoughCreditsToJoin();
 			local bReady = GAMESTATE:GetNumSidesJoined() > 0;
 			if bCanPlay or bReady then
-				self:settext(THEME:GetString("ScreenTitleJoin","HelpTextJoin"));
+				self:settext(string.lower(THEME:GetString("ScreenTitleJoin","HelpTextJoin")));
 			else
-				self:settext(THEME:GetString("ScreenTitleJoin","HelpTextWait"));
+				self:settext(string.lower(THEME:GetString("ScreenTitleJoin","HelpTextWait")));
 			end
 		end;
 	};

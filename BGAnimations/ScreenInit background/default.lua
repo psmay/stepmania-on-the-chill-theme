@@ -12,7 +12,7 @@ local t = Def.ActorFrame {
 		InitCommand=cmd(Center);
 
 		LoadFont(font_name) .. {
-			Text="GAME SOFTWARE AND ORIGINAL THEME";
+			Text=string.lower("Game Software and Original Theme");
 			InitCommand=cmd(strokecolor,Color("Outline");y,SCREEN_HEIGHT*-0.438;rotationx,90;sleep,get_start(0);smooth,transition_duration;rotationx,0);
 		};
 		LoadActor("sm-arrow-logo") .. {
@@ -27,7 +27,7 @@ local t = Def.ActorFrame {
 		};
 
 		LoadFont(font_name) .. {
-			Text="NEW THEME DESIGN AND ARTWORK";
+			Text=string.lower("New Theme Design and Artwork");
 			InitCommand=cmd(strokecolor,Color("Outline");y,SCREEN_HEIGHT*0.045;rotationx,90;sleep,get_start(4);smooth,transition_duration;rotationx,0);
 		};
 		LoadActor("rhythm-hfgk-logo") .. {

@@ -7,8 +7,8 @@ return Def.ActorFrame {
 		GainFocusCommand=cmd(stoptweening;decelerate,0.1;zoomto,256,26;diffusealpha,1);
 		LoseFocusCommand=cmd(stoptweening;accelerate,0.1;zoomto,SCREEN_WIDTH,0;diffusealpha,0);
 	};
-	LoadFont("Common Normal") .. {
-		Text=THEME:GetString("ScreenTitleMenu",gc:GetText());
+	LoadFont("ScreenTitleMenu option") .. {
+		Text=string.lower(THEME:GetString("ScreenTitleMenu",gc:GetText()));
 		OnCommand=cmd(shadowlength,1);
 		GainFocusCommand=cmd(stoptweening;linear,0.1;zoom,1;diffuse,color("1,1,1,1"));
 		LoseFocusCommand=cmd(stoptweening;linear,0.1;zoom,0.75;diffuse,color("0.5,0.5,0.5,1"));
