@@ -30,7 +30,7 @@ The notable changes include:
 		* To represent SSC, lightly simplified vectorization of the SSC logo.
 			* (This logo is to credit producers of the game and does not signify their endorsement of this theme.)
 			* The logo is geometrically simple enough that my version has to be held quite close to the original to notice any differences.
-		* To represent my contribution, the "rhythm.hfgk" logo.
+		* To represent my contribution, the "rhythm.hgk" logo.
 	* "Advanced Rhythm Simulation — StepMania: On The Chill" logotype.
 		* "Advanced Rhythm Simulation" (as opposed to "Advanced Rhythm Game" present on some logos) adds a touch of Engrishness to the title.
 		* Uses the StepTech typeface (see below).

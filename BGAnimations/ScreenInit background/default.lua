@@ -30,11 +30,11 @@ local t = Def.ActorFrame {
 			Text=string.lower("New Theme Design and Artwork");
 			InitCommand=cmd(strokecolor,Color("Outline");y,SCREEN_HEIGHT*0.045;rotationx,90;sleep,get_start(4);smooth,transition_duration;rotationx,0);
 		};
-		LoadActor("rhythm-hfgk-logo") .. {
+		LoadActor("rhythm-hgk-logo") .. {
 			InitCommand=cmd(zoom,0.587;x,SCREEN_WIDTH*0;y,SCREEN_HEIGHT*0.168;rotationx,90;sleep,get_start(5);smooth,transition_duration;rotationx,0);
 		};
 		LoadFont(font_name) .. {
-			Text="http://rhythm.hfgk.us/";
+			Text="http://rhythm.hgk.us/";
 			InitCommand=cmd(strokecolor,Color("Outline");zoom,1.2;y,SCREEN_HEIGHT*0.294;rotationx,90;sleep,get_start(6);smooth,transition_duration;rotationx,0);
 		};
 	};
