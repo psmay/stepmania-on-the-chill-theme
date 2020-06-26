@@ -21,9 +21,5 @@ t[#t+1] = Def.ActorFrame {
 		InitCommand=cmd(Center;scaletoclipped,SCREEN_WIDTH+1,SCREEN_HEIGHT);
 		OnCommand=cmd(diffuse,ColorSchemeColors.Main;diffusebottomedge,ColorSchemeColors.OffMain;diffusealpha,0.45);
 	};
-	LoadActor(THEME:GetPathB("ScreenWithMenuElements","background/_bg top")) .. {
-		InitCommand=cmd(Center;scaletoclipped,SCREEN_WIDTH+1,SCREEN_HEIGHT);
-		OnCommand=cmd(diffusealpha,0.5);
-	};
 };
 return t
