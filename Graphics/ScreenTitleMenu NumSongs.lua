@@ -1,2 +1,2 @@
-return LoadFont("Game metadata") .. {
+return LoadFont("Common Normal") .. {
 };

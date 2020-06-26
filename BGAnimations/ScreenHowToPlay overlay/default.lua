@@ -51,7 +51,7 @@ return Def.ActorFrame {
 		BeginCommand=function(self)
 			self:AddAttribute(12, {Length=9, Diffuse=Color.White});
 		end;
-		OnCommand=cmd(diffuse,color("#0088ff");shadowlength,2;shadowcolor,BoostColor(color("#0088ff77"),0.25);diffusealpha,0;zoom,4;sleep,0.0;linear,0.3;diffusealpha,1;zoom,1;sleep,1.8;linear,0.3;zoom,0.75;x,170;y,60);
+		OnCommand=cmd(skewx,-0.125;diffuse,ColorSchemeColors.Deep;shadowlength,2;shadowcolor,BoostColor(ColorSchemeColors.DeepSemiAlpha,0.25);diffusealpha,0;zoom,4;sleep,0.0;linear,0.3;diffusealpha,1;zoom,1;sleep,1.8;linear,0.3;zoom,0.75;x,170;y,60);
 	};
 	LoadActor("_howtoplay feet") .. {
 			InitCommand=cmd(shadowlength,1;strokecolor,Color.Outline);

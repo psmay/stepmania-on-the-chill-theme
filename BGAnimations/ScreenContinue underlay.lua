@@ -23,11 +23,11 @@ t[#t+1] = Def.ActorFrame {
 	-- Underline
 	Def.Quad {
 		InitCommand=cmd(y,16;zoomto,256,1);
-		OnCommand=cmd(diffuse,color("#ffd400");shadowlength,1;shadowcolor,BoostColor(color("#ffd40077"),0.25);linear,0.25;zoomtowidth,256;fadeleft,0.25;faderight,0.25);
+		OnCommand=cmd(diffuse,ColorSchemeColors.Deep;shadowlength,1;shadowcolor,BoostColor(ColorSchemeColors.DeepSemiAlpha,0.25);linear,0.25;zoomtowidth,256;fadeleft,0.25;faderight,0.25);
 	};
 	LoadFont("Common Bold") .. {
 		Text="Continue?";
-		OnCommand=cmd(skewx,-0.125;diffuse,color("#ffd400");shadowlength,2;shadowcolor,BoostColor(color("#ffd40077"),0.25));
+		OnCommand=cmd(skewx,-0.125;diffuse,ColorSchemeColors.Deep;shadowlength,2;shadowcolor,BoostColor(ColorSchemeColors.DeepSemiAlpha,0.25));
 	};
 };
 --

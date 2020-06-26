@@ -3,12 +3,12 @@ return Def.ActorFrame {
 	Def.Quad {
 		Name="Underline";
 		InitCommand=cmd(y,-12);
-		OnCommand=cmd(diffuse,color("#ffd400");shadowlength,1;zoomtowidth,192;fadeleft,0.25;faderight,0.25);
+		OnCommand=cmd(diffuse,ColorSchemeColors.Deep;shadowlength,1;zoomtowidth,192;fadeleft,0.25;faderight,0.25);
 	};
 	LoadFont("Common Bold") .. {
 		Text=ScreenString("Information");
 		InitCommand=cmd(y,-26);
-		OnCommand=cmd(skewx,-0.125;diffuse,color("#ffd400");shadowlength,2;shadowcolor,BoostColor(color("#ffd40077"),0.25))
+		OnCommand=cmd(skewx,-0.125;diffuse,ColorSchemeColors.Deep;shadowlength,2;shadowcolor,BoostColor(ColorSchemeColors.DeepSemiAlpha,0.25))
 	};
 	LoadFont("Common Normal") .. {
 		Text=ScreenString("Jump");

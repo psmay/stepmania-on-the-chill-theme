@@ -67,7 +67,7 @@ t[#t+1] = Def.ActorFrame {
 		OnCommand=cmd(diffusealpha,0;linear,0.5;diffusealpha,1;sleep,1.5;linear,0.5;diffusealpha,0);
 	};
 	LoadFont("Common Normal") .. {
-		InitCommand=cmd(strokecolor,Color("Outline");diffuse,Color("Orange");diffusebottomedge,Color("Yellow");zoom,0.75;y,20);
+		InitCommand=cmd(strokecolor,Color("Outline");diffuse,ColorSchemeColors.VeryShallow;diffusebottomedge,ColorSchemeColors.VeryDeep;zoom,0.75;y,20);
 		BeginCommand=function(self)
 			local text = "";
 			local SongOrCourse;

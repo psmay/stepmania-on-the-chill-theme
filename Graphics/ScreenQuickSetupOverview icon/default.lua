@@ -9,7 +9,7 @@ t[#t+1] = Def.ActorFrame {
 	GainFocusCommand=cmd(finishtweening;zoom,1.125;bounceend,0.125;zoom,1);
 	LoseFocusCommand=cmd(stoptweening;linear,0.125;zoom,0.875);
 	LoadActor("_base") .. {
-		GainFocusCommand=cmd(stoptweening;linear,0.125;diffuse,Color("Orange");diffusetopedge,Color("Yellow"));
+		GainFocusCommand=cmd(stoptweening;linear,0.125;diffuse,ColorSchemeColors.VeryShallow;diffusetopedge,ColorSchemeColors.VeryDeep);
 		LoseFocusCommand=cmd(stoptweening;linear,0.125;diffuse,Color("White"));
 	};
 	LoadFont("Common Normal") .. {

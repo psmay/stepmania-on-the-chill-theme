@@ -31,7 +31,7 @@ for i=1,NumColumns do
 			OnCommand=cmd(diffuse,CustomDifficultyToColor(s);diffusealpha,0.125);
 		};
 		LoadFont("Common Normal") .. {
-			InitCommand=cmd(uppercase,true;settext,CustomDifficultyToLocalizedString(s));
+			InitCommand=cmd(settext,CustomDifficultyToLocalizedString(s));
 			OnCommand=cmd(zoom,0.675;maxwidth,80/0.675;diffuse,CustomDifficultyToColor(s);shadowlength,1);
 		};
 	};

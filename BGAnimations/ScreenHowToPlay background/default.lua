@@ -6,7 +6,7 @@ return Def.ActorFrame {
 	Def.Quad {
 		InitCommand=cmd(scaletoclipped,SCREEN_WIDTH,SCREEN_HEIGHT);
 		OnCommand=cmd(diffuse,color("#000044"));
-	};	
+	};
 	-- These actors implement a parallax cloud effect
 	LoadActor("backdrop-clouds") .. {
 		InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;zoomtowidth,SCREEN_WIDTH);

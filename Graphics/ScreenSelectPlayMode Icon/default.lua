@@ -19,13 +19,13 @@ t[#t+1] = Def.ActorFrame {
 
 	-- todo: generate a better font for these.
 	LoadFont("Common Large")..{
-		Text=string.upper(string_name);
+		Text=string_name;--string.lower(string_name);
 		InitCommand=cmd(y,-12;maxwidth,232);
 		OnCommand=cmd(diffuse,Color.Black;shadowlength,1;shadowcolor,color("#ffffff77");skewx,-0.125);
 	};
 	LoadFont("Common Normal")..{
-		Text=string.upper(string_expl);
-		InitCommand=cmd(y,27.5;maxwidth,232);
+		Text=string_expl;--string.lower(string_expl);
+		InitCommand=cmd(y,27.5;maxwidth,232;skewx,-0.125);
 	};
 	LoadActor("_background base") .. {
 		DisabledCommand=cmd(diffuse,color("0,0,0,0.5"));

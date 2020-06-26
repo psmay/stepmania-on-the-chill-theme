@@ -2,8 +2,8 @@ local gc = Var("GameCommand");
 
 local string_name = gc:GetText();
 local string_expl = THEME:GetString("StyleType", gc:GetStyle():GetStyleType());
-local icon_color = color("#0044FF");
-local icon_color2 = color("#FFFFFF");
+local icon_color = ColorSchemeColors.Main;
+local icon_color2 = ColorSchemeColors.OffMain;
 
 local t = Def.ActorFrame {};
 t[#t+1] = Def.ActorFrame { 
@@ -19,13 +19,13 @@ t[#t+1] = Def.ActorFrame {
 	LoadActor(THEME:GetPathG("ScreenSelectPlayMode", "icon/_cutout"));
 
 	LoadFont("Common Large")..{
-		Text=string.upper(string_name);
+		Text=string_name;
 		InitCommand=cmd(y,-12;maxwidth,232);
 		OnCommand=cmd(diffuse,Color.Black;shadowlength,1;shadowcolor,color("#ffffff77");skewx,-0.125);
 	};
 	LoadFont("Common Normal")..{
-		Text=string.upper(string_expl);
-		InitCommand=cmd(y,27.5;maxwidth,232);
+		Text=string_expl;
+		InitCommand=cmd(y,27.5;maxwidth,232;skewx,-0.125);
 	};
 
 	LoadActor(THEME:GetPathG("ScreenSelectPlayMode", "icon/_background base"))..{

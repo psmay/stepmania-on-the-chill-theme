@@ -5,7 +5,7 @@ t[#t+1] = Def.ActorFrame {
 	InitCommand=cmd(Center);	
 	Def.Quad {
 		InitCommand=cmd(scaletoclipped,SCREEN_WIDTH,SCREEN_HEIGHT);
-		OnCommand=cmd(diffuse,Color.Black;diffusealpha,0;linear,0.5;diffusealpha,0.75);
+		OnCommand=cmd(diffuse,Color.Black;diffusealpha,0;linear,0.5;diffusealpha,0.25);
 		OffCommand=cmd(linear,0.25;diffusealpha,0);
 	};
 };

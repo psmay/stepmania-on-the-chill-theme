@@ -21,7 +21,7 @@ end;
 local function CreatePaneDisplayItem( _pnPlayer, _sLabel, _rcRadarCategory )
 	return Def.ActorFrame {
 		LoadFont("Common SemiBold") .. {
-			Text=string.upper( THEME:GetString("PaneDisplay",_sLabel) );
+			Text=THEME:GetString("PaneDisplay",_sLabel);
 			InitCommand=cmd(horizalign,left);
 			OnCommand=cmd(zoom,0.5875;diffuse,color("0.9,0.9,0.9");shadowlength,1);
 		};

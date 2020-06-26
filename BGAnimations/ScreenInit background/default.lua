@@ -1,5 +1,5 @@
 
-local font_name = "Angular Sans";
+local font_name = "Common Normal";
 
 local start_delay_increment=0.2;
 local get_start = function (step)
