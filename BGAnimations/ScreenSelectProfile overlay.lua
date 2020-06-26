@@ -46,14 +46,14 @@ function LoadPlayerStuff(Player)
 	}; --]]
 	local t = Def.ActorFrame {
 		Name = 'JoinFrame';
-		LoadCard(Color('Orange'));
+		LoadCard(ColorSchemeColors.VeryShallow);
 --[[ 		Def.Quad {
 			InitCommand=cmd(zoomto,200+4,230+4);
 			OnCommand=cmd(shadowlength,1;diffuse,color("0,0,0,0.5"));
 		};
 		Def.Quad {
 			InitCommand=cmd(zoomto,200,230);
-			OnCommand=cmd(diffuse,Color('Orange');diffusealpha,0.5);
+			OnCommand=cmd(diffuse,ColorSchemeColors.VeryShallow;diffusealpha,0.5);
 		}; --]]
 		LoadFont("Common Normal") .. {
 			Text=THEME:GetString("ScreenSelectProfile","PressStart");
@@ -300,12 +300,15 @@ local t = Def.ActorFrame {
 		};
 		-- sounds
 		LoadActor( THEME:GetPathS("Common","start") )..{
+			IsAction= true,
 			StartButtonMessageCommand=cmd(play);
 		};
 		LoadActor( THEME:GetPathS("Common","cancel") )..{
+			IsAction= true,
 			BackButtonMessageCommand=cmd(play);
 		};
 		LoadActor( THEME:GetPathS("Common","value") )..{
+			IsAction= true,
 			DirectionButtonMessageCommand=cmd(play);
 		};
 	};

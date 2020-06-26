@@ -3,67 +3,76 @@ StepMania: On The Chill
 
 ![StepMania: On The Chill title screen](http://psmay.github.io/stepmania-on-the-chill-theme/screenshots/2014-11-06/03-title-b.jpg)
 
-## Introduction
+Introduction
+------------
 
-**StepMania: On The Chill** is a theme for StepMania 5. It is based on the default theme by Midiman, and is actually intended to remain close enough to track most fixes/updates that apply to the original.
+**StepMania: On The Chill** is a theme for StepMania 5.
 
-## The original theme
+This version is based on the `legacy` (`default` before 5.1) theme by Midiman, and is actually intended to remain close enough to track most fixes/updates that apply to the original.
 
-In principle, this is a fork of the `default` theme from the StepMania project.
+The original theme
+------------------
 
-In practice, this is a fork of [a repo I started to track only the `Themes/default` directory within the main StepMania project](https://github.com/psmay/stepmania-default-theme).
+This is a fork of the `legacy` theme from the StepMania project.
 
-## Differences from the original
+This branch is based on the version of `legacy` from the 5.1.0-b2 release of StepMania and is developed and tested against that release.
+
+Differences from the original
+-----------------------------
 
 The notable changes include:
 
-* Blueness—blue, blue, and more blue. Nearly everything in the fiery yellow/orange characteristic of the default theme has been recolored to icy blues (and, where contrast is needed, snowy whites) here.
-	* There are still spots I've missed; this is a work in progress.
-* New artwork (see SVG files in `_assets`) to coincide with an in-progress cabinet artwork project I have going.
-	* Credits screen logos.
-		* To represent the StepMania project in general, lightly retouched/simplified vectorization of Plaguefox's well-known logotype.
-			* (This logo is to credit producers of the game and does not signify their endorsement of this theme.)
-			* The end caps of the strokes and the dot on the "i" are circular rather than elliptical.
-			* The stroke width was played with, though the result is similar to the original.
-			* Tried a novel composition of the red up-right arrow icon with this logotype.
-				* (which I like, but you can decide whether it's a hit or a miss.)
-		* To represent SSC, lightly simplified vectorization of the SSC logo.
-			* (This logo is to credit producers of the game and does not signify their endorsement of this theme.)
-			* The logo is geometrically simple enough that my version has to be held quite close to the original to notice any differences.
-		* To represent my contribution, the "rhythm.hgk" logo.
-	* "Advanced Rhythm Simulation — StepMania: On The Chill" logotype.
-		* "Advanced Rhythm Simulation" (as opposed to "Advanced Rhythm Game" present on some logos) adds a touch of Engrishness to the title.
-		* Uses the StepTech typeface (see below).
-	* Up-right icon arrow rendered in halftone (for a touch of early-DDR-reminiscent flair).
-* Horizontally parallax-scrolled blue clouds replace the chessboard pattern for menu screen backgrounds.
-* Vertically parallax-scrolled blue clouds replace the scrolling grid pattern for How To Play screen background.
+*   Blueness—blue, blue, and more blue. Nearly everything in the fiery yellow/orange characteristic of the `legacy` theme has been recolored to icy blues (and, where contrast is needed, snowy whites) here.
+    *   There are still spots I've missed; this is a work in progress.
+*   New artwork (see SVG files in `_assets`) to coincide with an in-progress cabinet artwork project I have going.
+    *   Credits screen logos.
+        *   To represent the StepMania project in general, lightly retouched/simplified vectorization of Plaguefox's well-known logotype.
+            *   (This logo is to credit producers of the game and does not signify their endorsement of this theme.)
+            *   The end caps of the strokes and the dot on the "i" are circular rather than elliptical.
+            *   The stroke width was played with, though the result is similar to the original.
+            *   Tried a novel composition of the red up-right arrow icon with this logotype.
+                *   (which I like, but you can decide whether it's a hit or a miss.)
+        *   To represent SSC, lightly simplified vectorization of the SSC logo.
+            *   (This logo is to credit producers of the game and does not signify their endorsement of this theme.)
+            *   The logo is geometrically simple enough that my version has to be held quite close to the original to notice any differences.
+        *   To represent my contribution, the "rhythm.hgk" logo.
+    *   "Advanced Rhythm Simulation — StepMania: On The Chill" logotype.
+        *   "Advanced Rhythm Simulation" (as opposed to "Advanced Rhythm Game" present on some logos) adds a touch of Engrishness to the title.
+        *   Uses the StepTech typeface (see below).
+    *   Up-right icon arrow rendered in halftone (for a touch of early-DDR-reminiscent flair).
+*   Horizontally parallax-scrolled blue clouds replace the chessboard pattern for menu screen backgrounds.
+*   Vertically parallax-scrolled blue clouds replace the scrolling grid pattern for How To Play screen background.
 
-## Still to do
+Still to do
+-----------
 
-* Change `Common fallback background.png` to stick out less. It shouldn't actually say "no background"; it should show a generic background that goes nicely with the rest of the screen.
-* Change the larger text-based images (like "1st Stage", "Game Over", but not like "Perfect", "OK!") to use StepTech typeface (see below), perhaps combining with a perspective effect as with the logotype itself.
-	* Where it makes sense stylistically, use all-lowercase text as with the logotype.
-* Create a bitmap font from StepTech to be used in the game.
+*   Change `Common fallback background.png` to stick out less. It shouldn't actually say "no background"; it should show a generic background that goes nicely with the rest of the screen.
+*   Change the larger text-based images (like "1st Stage", "Game Over", but not like "Perfect", "OK!") to use StepTech typeface (see below), perhaps combining with a perspective effect as with the logotype itself.
+    *   Where it makes sense stylistically, use all-lowercase text as with the logotype.
 
 ### In the upstream
 
 Problems that could use some addressing in the original theme include:
 
-* Many .png resources appear to be unused in the current version of the theme.
-	* The `_SelectIcon*.png` files, for example, are now automatically rendered from i18n'd text plus a generic background image.
-* There's an MP3 file in `Sounds` (and it should probably be removed instead of converted).
-* `_howto *.png` should be updated; they show screens of the old `sm-ssc` project page.
-* Add higher-res versions of the existing sans-serif bitmap fonts. There are places where text is displayed so much larger than the intended scale that the game begins to lose its polish.
+*   Many .png resources appear to be unused in the current version of the theme.
+    *   The `_SelectIcon*.png` files, for example, are now automatically rendered from i18n'd text plus a generic background image.
+*   There's an MP3 file in `Sounds` (and it should probably be removed instead of converted).
+*   `_howto *.png` should be updated; they show screens of the old `sm-ssc` project page.
+*   Add higher-res versions of the existing sans-serif bitmap fonts. There are places where text is displayed so much larger than the intended scale that the game begins to lose its polish.
 
-## StepTech typeface
+StepTech typeface
+-----------------
 
-The typeface used for the logotype has a working title of "StepTech" (or "StepTech 1st Mix"). It was entirely created by me and does not currently exist in any form other than raw glyphs in an SVG file. I've tried to work on making it available as an actual font (e.g. using FontForge), but there are some catches to the process. This font being based very strictly on a particular grid, and me being a stickler for precision, there has been room for chafing. Also, making the uppercase glyphs and glyphs with combining marks look as good as the lowercase is difficult in places.
+The typeface used for the logotype has a working title of "StepTech" (or "StepTech 1st Mix"). It was entirely created by me and does not currently exist in any form other than raw glyphs in an SVG file. I've tried to work on making it available as an actual font (e.g. using FontForge), but there are some catches to the process. This font being based very strictly on a particular grid, and me being a stickler for precision, there has been room for chafing. Also, making the uppercase glyphs and glyphs with combining marks look as good as the lowercase is difficult in places.
 
-## Credits and license
+The morbidly curious may be able to tease some SVGs and/or an actual font file out of the code in the [steptech-font-generator](https://github.com/psmay/steptech-font-generator) repo.
+
+Credits and license
+-------------------
 
 ### Original theme
 
-This theme is based heavily on the StepMania 5 default theme by Midiman of SSC. Being part of the main StepMania project, it is presumably under the MIT license.
+This theme is based heavily on the StepMania 5 `legacy` theme by Midiman of SSC. Being part of the main StepMania project, it is presumably under the MIT license.
 
 ### Logotypes
 
@@ -77,18 +86,18 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unit
 
 ##### `Common splash.png` (Plaguefox arrow/"worm" logo)
 
-Some artwork for this theme is derived from the default theme's `Common splash.png`. That image includes among its elements:
+Some artwork for this theme is derived from the `legacy` theme's `Common splash.png`. That image includes among its elements:
 
-* A red up- and right-pointed arrow drawn in broad strokes with circular end caps.
-* A blue logotype consisting of the word "stepmania", in lower case, using a round-cornered, squarish typeface with elliptical end caps.
+*   A red up- and right-pointed arrow drawn in broad strokes with circular end caps.
+*   A blue logotype consisting of the word "stepmania", in lower case, using a round-cornered, squarish typeface with elliptical end caps.
 
 The credits screen and part of the concept artwork contains a logo using the same elements with simplifications and a different arrangement realized in vectors (SVG):
 
-* The new logotype uses circular end caps rather than elliptical.
-* The new logotype's stroke width varies slightly from the original.
-* The arrow element is enlarged and moved behind the logotype.
-* Broad white outlines are added to the elements.
-* The sheen effects drawn on the original elements are replaced with simple gradient fills.
+*   The new logotype uses circular end caps rather than elliptical.
+*   The new logotype's stroke width varies slightly from the original.
+*   The arrow element is enlarged and moved behind the logotype.
+*   Broad white outlines are added to the elements.
+*   The sheen effects drawn on the original elements are replaced with simple gradient fills.
 
 Additionally, the generic background and part of the concept artwork contains a logo using the arrow element of the logo having been encircled and rendered with a halftone effect.
 
@@ -103,4 +112,3 @@ The credits screen and part of the concept artwork contains a logo for SSC (that
 The original artwork belongs to SSC. It is used by the StepMania project, but given that it is the logo of a group it should probably be treated more as a trademark than a copyrightable work—that is, even if modifying the artwork is legal, using it in a way for which they haven't given explicit permission may be considered bad faith (or, in a broader sense, illegal). My inclusion of it here is to give the group credit for their part in producing the game, and is placed so that it won't be mistaken as something else (such as an endorsement of this theme).
 
 I have obtained no special permission to use or modify the work and I do not assert any legal claim that I am the owner; consult the owner of the original artwork for permission to use my derived variant.
-

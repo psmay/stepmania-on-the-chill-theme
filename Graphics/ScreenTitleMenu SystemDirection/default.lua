@@ -13,7 +13,7 @@ local function MakeDisplayBar( fZoomX, fZoomY )
 		};
 		Def.Quad {
 			InitCommand=cmd(vertalign,bottom;zoomto,fZoomX,fZoomY);
-			OnCommand=cmd(diffuse,Color("Orange");diffusetopedge,Color("Yellow"));
+			OnCommand=cmd(diffuse,ColorSchemeColors.VeryShallow;diffusetopedge,ColorSchemeColors.VeryDeep);
 		};
 	};
 end

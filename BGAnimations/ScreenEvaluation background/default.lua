@@ -20,7 +20,7 @@ t[#t+1] = Def.ActorFrame {
 	};
 	Def.Quad {
 		InitCommand=cmd(Center;scaletoclipped,SCREEN_WIDTH+1,SCREEN_HEIGHT);
-		OnCommand=cmd(diffuse,color("#FFCB05");diffusebottomedge,color("#F0BA00");diffusealpha,0.45);
+		OnCommand=cmd(diffuse,ColorSchemeColors.Main;diffusebottomedge,ColorSchemeColors.OffMain;diffusealpha,0.45);
 	};
 };
 

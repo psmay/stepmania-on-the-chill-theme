@@ -27,7 +27,7 @@ t[#t+1] = Def.ActorFrame {
 		OnCommand=cmd(faderight,1;diffusealpha,0;linear,0.5;faderight,0;diffusealpha,1;sleep,1.5;linear,0.5;diffusealpha,0);
 	}; --]]
 	LoadFont("Common Normal") .. {
-		InitCommand=cmd(strokecolor,Color("Outline");diffuse,Color("Orange");diffusebottomedge,Color("Yellow");zoom,0.75;y,10);
+		InitCommand=cmd(strokecolor,Color("Outline");diffuse,ColorSchemeColors.VeryShallow;diffusebottomedge,ColorSchemeColors.VeryDeep;zoom,0.75;y,10);
 		BeforeLoadingNextCourseSongMessageCommand=function(self)
 			local NextSong = SCREENMAN:GetTopScreen():GetNextCourseSong();
 			self:settext( SecondsToMSSMsMs( NextSong:MusicLengthSeconds() ) );

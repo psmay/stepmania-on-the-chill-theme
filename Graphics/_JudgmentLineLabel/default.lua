@@ -14,6 +14,6 @@ return Def.ActorFrame {
 		InitCommand=cmd(diffuse,JudgmentLineToColor(jl));
 	};
 	LoadFont("Common Normal") .. {
-		InitCommand=cmd(zoom,0.675;settext,string.upper(JudgmentLineToLocalizedString(jl));diffuse,JudgmentLineToColor(jl);shadowlength,1;maxwidth,180);
+		InitCommand=cmd(zoom,0.675;settext,JudgmentLineToLocalizedString(jl);diffuse,JudgmentLineToColor(jl);shadowlength,1;maxwidth,180);
 	};
 };
