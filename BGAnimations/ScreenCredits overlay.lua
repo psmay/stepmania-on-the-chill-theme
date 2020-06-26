@@ -59,7 +59,4 @@ return Def.ActorFrame{
 	creditScroller..{
 		InitCommand=cmd(CenterX;y,SCREEN_BOTTOM-64),
 	},
-	LoadActor(THEME:GetPathB("ScreenWithMenuElements","background/_bg top"))..{
-		InitCommand=cmd(Center),
-	},
 };
