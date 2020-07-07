@@ -88,50 +88,15 @@ end
 
 
 t[#t+1] = Def.ActorFrame {
-	InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y);
-	--OnCommand=cmd(stoptweening;zoom,1.25;decelerate,3;zoom,1);
+	InitCommand=cmd(
+		x,SCREEN_CENTER_X;
+		y,SCREEN_CENTER_Y;
+		);
 	stage_num_actor .. {
-		--OnCommand=cmd(diffusealpha,0;linear,0.25;diffusealpha,1;sleep,1.75;linear,0.5;zoomy,0;zoomx,2;diffusealpha,0);
+		--InitCommand=cmd(x,SCREEN_CENTER_X; y,SCREEN_CENTER_Y);
 	};
 };
 
-local statsColor = Color("Outline")
-
-t[#t+1] = Def.ActorFrame {
-  --InitCommand=cmd(x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+96);
-  InitCommand=cmd(vertalign,bottom;x,SCREEN_RIGHT-32;y,SCREEN_BOTTOM-32);
-  OnCommand=cmd(diffusealpha,0;linear,0.5;diffusealpha,1;sleep,1.5;linear,0.5;diffusealpha,0);
-	LoadFont("Common Normal") .. {
-		Text=GAMESTATE:IsCourseMode() and GAMESTATE:GetCurrentCourse():GetDisplayFullTitle() or GAMESTATE:GetCurrentSong():GetDisplayFullTitle();
-		InitCommand=cmd(horizalign,right;strokecolor,statsColor;y,-20);
-	};
-	LoadFont("Common Normal") .. {
-		Text=GAMESTATE:IsCourseMode() and ToEnumShortString( GAMESTATE:GetCurrentCourse():GetCourseType() ) or GAMESTATE:GetCurrentSong():GetDisplayArtist();
-		InitCommand=cmd(horizalign,right;strokecolor,statsColor;zoom,0.75);
-	};
-	LoadFont("Common Normal") .. {
-		InitCommand=cmd(horizalign,right;strokecolor,statsColor;diffuse,ColorSchemeColors.VeryShallow;diffusebottomedge,ColorSchemeColors.VeryDeep;zoom,0.75;y,20);
-		BeginCommand=function(self)
-			local text = "";
-			local SongOrCourse;
-			if GAMESTATE:IsCourseMode() then
-				local trail = GAMESTATE:GetCurrentTrail(GAMESTATE:GetMasterPlayerNumber());
-				SongOrCourse = GAMESTATE:GetCurrentCourse();
-				local estimatedNumStages = SongOrCourse:GetEstimatedNumStages();
-				local trailTime = SecondsToMSSMsMs( TrailUtil.GetTotalSeconds(trail) );
-				local stageOrStages = "Stages";
-				if estimatedNumStages == 1 then
-					stageOrStages = "Stage";
-				end
-				text = estimatedNumStages .. " " .. stageOrStages .. " / " .. trailTime;
-			else
-				SongOrCourse = GAMESTATE:GetCurrentSong();
-				text = SecondsToMSSMsMs( SongOrCourse:MusicLengthSeconds() );
-			end;
-			self:settext(text);
-		end;
-	};
-};
 
 
 return t
