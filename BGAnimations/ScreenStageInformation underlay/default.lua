@@ -1,6 +1,4 @@
 
-
-
 -- Possibilities from GameState.cpp
 -- Stage_Demo - Demo or Jukebox mode
 -- Stage_Event - Event mode
@@ -67,11 +65,7 @@ else
 end
 local stage_num_actor = nil
 
-if stageOrMode == "Stage_Event" then
-	stage_num_actor = LoadActor("intro event mode")
-elseif stageOrMode == "Stage_1st" then
-	stage_num_actor = LoadActor("intro stage 1")
-end
+stage_num_actor = LoadActor("intro")
 
 if stage_num_actor == nil then
 	stage_num_actor= Def.BitmapText{
