@@ -18,7 +18,12 @@ function imap(source, transform)
 	return result
 end
 
-
+function push_all(destination, source)
+	for i, v in ipairs(source) do
+		table.insert(destination, v)
+	end
+	return destination
+end
 
 -- This returns a copy of the source array sorted by the key selected using the key_selector function. A nil key is
 -- treated as equal to another nil key. Otherwise, a nil key is sorted after any non-nil value (or before any non-nil
@@ -37,7 +42,7 @@ function sorted_by_key(source, key_selector, nil_values_first)
 
 	-- In Lua, a compare function(a,b) is expected to return a < b.
 	-- If a == b, the result is expected to be false.
-	local comparer = function(a, b)
+	local function comparer(a, b)
 		if a.k == b.k then
 			return a.i < b.i
 		elseif a.k ~= nil then
@@ -61,7 +66,7 @@ function sorted_by_key(source, key_selector, nil_values_first)
 end
 
 function sorted_by_z_index(source)
-	local key_selector = function(v)
+	local function key_selector(v)
 		return v.z_index
 	end
 	return sorted_by_key(source, key_selector, true)
@@ -71,7 +76,7 @@ end
 
 local SQ = 480
 
-local get_current_stage_info = function()
+local function get_current_stage_info()
 	local info = {
 		stage = GAMESTATE:GetCurrentStage(),
 		number = GAMESTATE:GetCurrentStageIndex() + 1,
@@ -133,9 +138,9 @@ end
 
 
 
-local schedule_delays = function(actor_elements)
+local function schedule_delays(actor_elements)
 	local main_initial_delay = 0.3
-	local main_staying_delay = 10.5
+	local main_staying_delay = 1.5
 	local main_delay_increment = 0.1
 	local main_transition_delay = 0.1
 
@@ -155,7 +160,7 @@ local schedule_delays = function(actor_elements)
 	return actor_elements
 end
 
-local get_backdrop_actor_element = function()
+local function get_backdrop_actor_element()
 	local x1 = 0
 	local x0 = x1 - SCREEN_WIDTH
 	local y = 0
@@ -177,23 +182,23 @@ local get_backdrop_actor_element = function()
 	return actor_element
 end
 
-local get_stage_stat_actor_elements = function(stage_stat_lines)
+local function get_stage_stat_actor_elements(stage_stat_lines, x, y)
 	local actor_elements = imap(stage_stat_lines, function(i, text)
-		local info_actor_y_offset = 0
-		local info_actor_y_offset_increment = SQ * 0.05
+		local info_actor_y_offset = y
+		local info_actor_y_offset_increment = 24
 
-		local y = info_actor_y_offset + ((i - 1) * info_actor_y_offset_increment)
+		local info_actor_y = info_actor_y_offset + ((i - 1) * info_actor_y_offset_increment)
 		return {
 			actor = Def.ActorFrame {
 				LoadFont("Common Normal") .. {
 					Text = text;
-					InitCommand = cmd(horizalign, right; vertalign, top; diffuse, statsColor);
+					InitCommand = cmd(horizalign, right; vertalign, top);
 				}
 			},
-			x0 = -SCREEN_WIDTH,
-			x1 = 0,
-			y0 = y,
-			y1 = y,
+			x0 = x + -SCREEN_WIDTH,
+			x1 = x,
+			y0 = info_actor_y,
+			y1 = info_actor_y,
 			zoom = (i == 3) and 0.75 or 1,
 			z_index = 10,
 		}
@@ -201,7 +206,7 @@ local get_stage_stat_actor_elements = function(stage_stat_lines)
 	return actor_elements
 end
 
-local get_stage_stat_lines = function(stage_info)
+local function get_stage_stat_lines(stage_info)
 	local title_line_text = stage_info.course_title
 	if title_line_text == nil then title_line_text = stage_info.song_title end
 
@@ -218,185 +223,168 @@ local get_stage_stat_lines = function(stage_info)
 	}
 end
 
-local determine_actors = function ()
-
+local function determine_actors()
 	local stage_info = get_current_stage_info()
 
-	-- FIXME: Spikes for testing
-	stage_info.is_numbered_stage = false -- FIXME: Remove this
-	stage_info.short_name = "Event" -- FIXME: Remove this
-	stage_info.number = 5 -- FIXME: Remove this
-
 	local backdrop_actor_element = get_backdrop_actor_element()
-	local stage_stat_actor_elements = get_stage_stat_actor_elements(get_stage_stat_lines(stage_info))
 
-	if stage_info.is_numbered_stage then
-		if stage_info.number >= 10 then
-			-- TODO: Figure out making multiple digits work
-			return nil
-		else
-			local zoom_for_rendered_actors = 0.5
+	local key = stage_info.is_numbered_stage and stage_info.number or stage_info.short_name
 
-			local hidari_at_left_x = -48
-			local migi_at_right_x = 100
-			local padding = -60
-
-			if stage_info.number == 1 then
-				migi_at_right_x = 130
-				padding = -10
-			end
-
-			local migi_x1 = migi_at_right_x - padding
-			local migi_x0 = migi_x1 - SCREEN_WIDTH
-			local migi_y = 0
-
-			local hidari_x1 = hidari_at_left_x + padding
-			local hidari_x0 = hidari_x1 + SCREEN_WIDTH
-			local hidari_y = 15
-
-			local stats_x = 17
-			local stats_y = 105
-
-
-			if stage_info.number == 1 then
-				stats_x = 25 -- 25, 105
-			elseif stage_info.number == 4 then
-				stats_x = 195 -- 195, 105
-			elseif stage_info.number == 6 then
-				stats_y = 85 -- 17, 85
-			elseif stage_info.number == 7 then
-				stats_y = 120 -- 17, 120
-			elseif stage_info.number == 8 then
-				stats_y = 85 -- 17, 85
-			end
-
-			for i, v in ipairs(stage_stat_actor_elements) do
-				v.x0 = v.x0 + stats_x
-				v.x1 = v.x1 + stats_x
-				v.y0 = v.y0 + stats_y
-				v.y1 = v.y1 + stats_y
-			end
-
-			local actor_elements = {
-				backdrop_actor_element,
-				{
-					actor = LoadActor("numeral " .. stage_info.number),
-					x0 = migi_x0,
-					y0 = migi_y,
-					x1 = migi_x1,
-					y1 = migi_y,
-					zoom = zoom_for_rendered_actors,
-				},
-				{
-					actor = LoadActor("word stage"),
-					x0 = hidari_x0,
-					y0 = hidari_y,
-					x1 = hidari_x1,
-					y1 = hidari_y,
-					zoom = zoom_for_rendered_actors,
-				},
-				unpack(stage_stat_actor_elements),
-			}
-
-			return actor_elements
-		end
-	elseif stage_info.short_name == "Event" then
-
-		-- event mode
-		-- zoom = 0.3
-		-- migi is word mode 187.5, 62
-		-- hidari is word event 0, -10
-		-- stats at 287, 100
-		
-		-- final stage
-		-- zoom = 0.4
-		-- migi is word stage 110, 72
-		-- hidari is word final 0, -20
-		-- stats at 120, 114
-
-		-- extra stage (Extra1)
-		-- zoom = 0.3
-		-- migi is word stage 155, 72
-		-- hidari is word extra 0, -20
-		-- stats at 162, 104
-		-- (Extra2) add word another at -153, -80
-
-		-- endless mode
-		-- zoom = 0.23
-		-- migi is word mode 217, 52
-		-- hidari is word endless 0, -10
-		-- stats at 133, 58
-
-		-- nonstop mode
-		-- zoom = 0.21
-		-- migi is word mode 215, 40
-		-- hidari is word nonstop 0, -10
-		-- stats at 135, 42
-
-		-- oni mode
-		-- zoom 0.5
-		-- migi is word mode 72, 50
-		-- hidari is word oni 0, -40
-		-- stats 238, 108
-
-		-- demo mode
-		-- zoom 0.35
-		-- migi is word mode 177 70
-		-- hidari is word demo 0 -20
-		-- stats 52 80
-
-		local zoom_for_rendered_actors = 0.35
-
-		
-		local migi_x1 = 177
-		local migi_x0 = migi_x1 - SCREEN_WIDTH
-		local migi_y = 70
-
-		local hidari_x1 = 0
-		local hidari_x0 = hidari_x1 + SCREEN_WIDTH
-		local hidari_y = -20
-
-		local stats_x
-		local stats_y
-
-		stats_x = 52
-		stats_y = 80
-
-
-		for i, v in ipairs(stage_stat_actor_elements) do
-			v.x0 = v.x0 + stats_x
-			v.x1 = v.x1 + stats_x
-			v.y0 = v.y0 + stats_y
-			v.y1 = v.y1 + stats_y
-		end
-
-		local actor_elements = {
-			backdrop_actor_element,
-			{
-				actor = LoadActor("word mode"),
-				x0 = migi_x0,
-				y0 = migi_y,
-				x1 = migi_x1,
-				y1 = migi_y,
-				zoom = zoom_for_rendered_actors,
-				z_index = 1,
+	local actor_elements_metrics_table = {
+		[1] = {
+			stats_info = { x = 25, y = 105 },
+			elements_info = {
+				{ from_left = false, actor_name = "numeral 1", x = 140, y = 0, zoom = 0.5 },
+				{ from_left = true, actor_name = "word stage", x = -58, y = 15, zoom = 0.5 },
 			},
-			{
-				actor = LoadActor("word demo"),
-				x0 = hidari_x0,
-				y0 = hidari_y,
-				x1 = hidari_x1,
-				y1 = hidari_y,
-				zoom = zoom_for_rendered_actors,
+		},
+		[2] = {
+			stats_info = { x = 17, y = 105 },
+			elements_info = {
+				{ from_left = false, actor_name = "numeral 2", x = 160, y = 0, zoom = 0.5 },
+				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 },
 			},
-			unpack(stage_stat_actor_elements),
-		}
+		},
+		[3] = {
+			stats_info = { x = 17, y = 105 },
+			elements_info = {
+				{ from_left = false, actor_name = "numeral 3", x = 160, y = 0, zoom = 0.5 },
+				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 },
+			},
+		},
+		[4] = {
+			stats_info = { x = 195, y = 105 },
+			elements_info = {
+				{ from_left = false, actor_name = "numeral 4", x = 160, y = 0, zoom = 0.5 },
+				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 },
+			},
+		},
+		[5] = {
+			stats_info = { x = 17, y = 105 },
+			elements_info = {
+				{ from_left = false, actor_name = "numeral 5", x = 160, y = 0, zoom = 0.5 },
+				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 },
+			},
+		},
+		[6] = {
+			stats_info = { x = 17, y = 85 },
+			elements_info = {
+				{ from_left = false, actor_name = "numeral 6", x = 160, y = 0, zoom = 0.5 },
+				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 },
+			},
+		},
+		[7] = {
+			stats_info = { x = 17, y = 120 },
+			elements_info = {
+				{ from_left = false, actor_name = "numeral 7", x = 160, y = 0, zoom = 0.5 },
+				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 },
+			},
+		},
+		[8] = {
+			stats_info = { x = 17, y = 85 },
+			elements_info = {
+				{ from_left = false, actor_name = "numeral 8", x = 160, y = 0, zoom = 0.5 },
+				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 },
+			},
+		},
+		[9] = {
+			stats_info = { x = 17, y = 105 },
+			elements_info = {
+				{ from_left = false, actor_name = "numeral 9", x = 160, y = 0, zoom = 0.5 },
+				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 },
+			},
+		},
+		Event = {
+			stats_info = { x = 287, y = 100 },
+			elements_info = {
+				{ from_left = true, actor_name = "word event", x = 0, y = -10, zoom = 0.3 },
+				{ from_left = false, actor_name = "word mode", x = 187.5, y = 62, zoom = 0.3 },
+			},
+		},
+		Final = {
+			stats_info = { x = 120, y = 114 },
+			elements_info = {
+				{ from_left = true, actor_name = "word final", x = 0, y = -20, zoom = 0.4 },
+				{ from_left = false, actor_name = "word stage", x = 110, y = 72, zoom = 0.4 },
+			},
+		},
+		Extra1 = {
+			stats_info = { x = 162, y = 104 },
+			elements_info = {
+				{ from_left = true, actor_name = "word extra", x = 0, y = -20, zoom = 0.3 },
+				{ from_left = false, actor_name = "word stage", x = 155, y = 72, zoom = 0.3 },
+			},
+		},
+		Extra2 = {
+			stats_info = { x = 162, y = 104 },
+			elements_info = {
+				{ from_left = true, actor_name = "word extra", x = 0, y = -20, zoom = 0.3 },
+				{ from_left = false, actor_name = "word stage", x = 155, y = 72, zoom = 0.3 },
+				{ from_left = true, actor_name = "word another", x = -153, y = -80, zoom = 0.3 },
+			},
+		},
+		Endless = {
+			stats_info = { x = 133, y = 58 },
+			elements_info = {
+				{ from_left = true, actor_name = "word endless", x = 0, y = -10, zoom = 0.23 },
+				{ from_left = false, actor_name = "word mode", x = 217, y = 52, zoom = 0.23 },
+			},
+		},
+		Nonstop = {
+			stats_info = { x = 135, y = 42 },
+			elements_info = {
+				{ from_left = true, actor_name = "word nonstop", x = 0, y = -10, zoom = 0.21 },
+				{ from_left = false, actor_name = "word mode", x = 215, y = 40, zoom = 0.21 },
+			},
+		},
+		Oni = {
+			stats_info = { x = 238, y = 108 },
+			elements_info = {
+				{ from_left = true, actor_name = "word oni", x = 0, y = -40, zoom = 0.5 },
+				{ from_left = false, actor_name = "word mode", x = 72, y = 50, zoom = 0.5 },
+			},
+		},
+		Demo = {
+			stats_info = { x = 52, y = 80 },
+			elements_info = {
+				{ from_left = true, actor_name = "word demo", x = 0, y = -20, zoom = 0.35 },
+				{ from_left = false, actor_name = "word mode", x = 177, y = 70, zoom = 0.35 },
+			},
+		},
+		_default = {
+			stats_info = { x = (SCREEN_WIDTH * 0.5) - 24, y = (SCREEN_HEIGHT * -0.5) + 24 },
+			elements_info = {},
+		},
+	}
 
-		return actor_elements
-	else
-		-- TODO: Implement non-numeral modes
-		return {}
+	local metrics_to_use = actor_elements_metrics_table[key]
+	if metrics_to_use == nil then
+		metrics_to_use = actor_elements_metrics_table._default
 	end
+
+	local custom_actor_elements = map(metrics_to_use.elements_info, function(ei)
+		local x = ei.x
+		local y = ei.y
+
+		return {
+			actor = LoadActor(ei.actor_name),
+			x0 = ei.from_left and (x - SCREEN_WIDTH) or (x + SCREEN_WIDTH),
+			y0 = y,
+			x1 = x,
+			y1 = y,
+			zoom = (ei.zoom ~= nil) and ei.zoom or 1,
+			z_index = ei.z_index,
+		}
+	end)
+
+	local stage_stat_actor_elements = get_stage_stat_actor_elements(get_stage_stat_lines(stage_info),
+		metrics_to_use.stats_info.x, metrics_to_use.stats_info.y)
+
+	local actor_elements = { backdrop_actor_element }
+	push_all(actor_elements, custom_actor_elements)
+	push_all(actor_elements, stage_stat_actor_elements)
+
+	return actor_elements
 
 end
 
@@ -405,8 +393,8 @@ end
 
 
 
-local t = Def.ActorFrame {} -- { InitCommand=cmd(x,SCREEN_CENTER_X; y, SCREEN_CENTER_Y); }
-local tx = Def.ActorFrame {} -- { InitCommand=cmd(x,SCREEN_CENTER_X; y, SCREEN_CENTER_Y); }
+local t = Def.ActorFrame {}
+local tx = Def.ActorFrame {}
 t[#t+1] = tx
 
 local scheduled_actor_elements = schedule_delays(determine_actors())
