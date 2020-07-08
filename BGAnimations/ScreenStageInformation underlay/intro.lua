@@ -259,15 +259,15 @@ local determine_actors = function ()
 
 
 			if stage_info.number == 1 then
-				stats_x = 25
+				stats_x = 25 -- 25, 105
 			elseif stage_info.number == 4 then
-				stats_x = 195
+				stats_x = 195 -- 195, 105
 			elseif stage_info.number == 6 then
-				stats_y = 85
+				stats_y = 85 -- 17, 85
 			elseif stage_info.number == 7 then
-				stats_y = 120
+				stats_y = 120 -- 17, 120
 			elseif stage_info.number == 8 then
-				stats_y = 85
+				stats_y = 85 -- 17, 85
 			end
 
 			for i, v in ipairs(stage_stat_actor_elements) do
@@ -333,19 +333,35 @@ local determine_actors = function ()
 		-- hidari is word nonstop 0, -10
 		-- stats at 135, 42
 
-		local zoom_for_rendered_actors = 0.5
+		-- oni mode
+		-- zoom 0.5
+		-- migi is word mode 72, 50
+		-- hidari is word oni 0, -40
+		-- stats 238, 108
 
-		local migi_x1 = 72
+		-- demo mode
+		-- zoom 0.35
+		-- migi is word mode 177 70
+		-- hidari is word demo 0 -20
+		-- stats 52 80
+
+		local zoom_for_rendered_actors = 0.35
+
+		
+		local migi_x1 = 177
 		local migi_x0 = migi_x1 - SCREEN_WIDTH
-		local migi_y = 50
-
+		local migi_y = 70
 
 		local hidari_x1 = 0
 		local hidari_x0 = hidari_x1 + SCREEN_WIDTH
-		local hidari_y = -40
+		local hidari_y = -20
 
-		local stats_x = 238
-		local stats_y = 108
+		local stats_x
+		local stats_y
+
+		stats_x = 52
+		stats_y = 80
+
 
 		for i, v in ipairs(stage_stat_actor_elements) do
 			v.x0 = v.x0 + stats_x
@@ -366,7 +382,7 @@ local determine_actors = function ()
 				z_index = 1,
 			},
 			{
-				actor = LoadActor("word oni"),
+				actor = LoadActor("word demo"),
 				x0 = hidari_x0,
 				y0 = hidari_y,
 				x1 = hidari_x1,
