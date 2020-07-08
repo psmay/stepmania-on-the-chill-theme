@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.04306746"
-     inkscape:cx="14733.509"
-     inkscape:cy="-667.44928"
+     inkscape:zoom="0.24362634"
+     inkscape:cx="20439.486"
+     inkscape:cy="1154.929"
      inkscape:document-units="pt"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -66,7 +66,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -429,5 +429,31 @@
        sodipodi:nodetypes="csssssccccccccsscccsccccccc"
        inkscape:export-xdpi="57.600071"
        inkscape:export-ydpi="57.600071" />
+    <g
+       aria-label="demo"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.777771px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:35.27777848;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+       id="text876"
+       transform="translate(3686.5278,3.9557568e-5)">
+      <path
+         d="m 1469.5714,1375.2401 v 123.4722 c 0,10.2306 7.4083,17.6389 17.6389,17.6389 h 141.1111 v -194.0278 h -35.2778 v 35.2778 h -105.8333 c -10.2306,0 -17.6389,7.7611 -17.6389,17.6389 z m 35.2778,17.6389 h 88.1944 v 88.1944 h -88.1944 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.777771px;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:35.27777848;fill:#ffffff;stroke:#000000;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+         id="path878"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 1645.9603,1375.2401 v 123.4722 c 0,10.2306 7.4083,17.6389 17.6389,17.6389 h 141.1111 v -35.2778 h -123.4722 v -35.2778 h 123.4722 v -70.5555 c 0,-9.8778 -7.7611,-17.6389 -17.6389,-17.6389 h -123.4722 c -10.2306,0.3528 -17.6389,7.7611 -17.6389,17.6389 z m 35.2778,17.6389 h 88.1944 v 17.6389 h -88.1944 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.777771px;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:35.27777848;fill:#ffffff;stroke:#000000;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+         id="path881"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 1981.0992,1357.954 h -158.75 v 17.2861 141.1111 h 35.2778 V 1392.879 h 35.2777 v 123.4722 h 35.2778 V 1392.879 h 35.2778 v 123.4722 h 35.2778 v -141.1111 c 0,-9.8778 -7.7611,-17.2861 -17.6389,-17.2861 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.777771px;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:35.27777848;fill:#ffffff;stroke:#000000;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+         id="path884"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 2016.6526,1375.2401 v 123.4722 c 0,10.2306 7.4083,17.6389 17.6389,17.6389 h 123.4722 c 9.8778,0 17.2861,-7.4083 17.2861,-17.6389 v -123.4722 c 0,-9.8778 -7.4083,-17.6389 -17.2861,-17.6389 h -123.4722 c -10.2306,0 -17.6389,7.7611 -17.6389,17.6389 z m 35.2778,17.6389 h 88.1944 v 88.1944 h -88.1944 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.777771px;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:35.27777848;fill:#ffffff;stroke:#000000;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke markers fill"
+         id="path887"
+         inkscape:connector-curvature="0" />
+    </g>
   </g>
 </svg>
