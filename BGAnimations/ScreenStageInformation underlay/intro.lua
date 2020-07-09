@@ -1,75 +1,9 @@
 
--- TODO: Put this somewhere else
-function map(source, transform)
-	local result = {}
-	local count = #source
-	for i = 1, count do
-		result[i] = transform(source[i])
-	end
-	return result
-end
-
-function imap(source, transform)
-	local result = {}
-	local count = #source
-	for i = 1, count do
-		result[i] = transform(i, source[i])
-	end
-	return result
-end
-
-function push_all(destination, source)
-	for i, v in ipairs(source) do
-		table.insert(destination, v)
-	end
-	return destination
-end
-
--- This returns a copy of the source array sorted by the key selected using the key_selector function. A nil key is
--- treated as equal to another nil key. Otherwise, a nil key is sorted after any non-nil value (or before any non-nil
--- value if nil_values_first is true). If two keys are equal, the order from the original array is preserved.
-
-function sorted_by_key(source, key_selector, nil_values_first)
-	nil_values_first = nil_values_first or false
-
-	local rows = imap(source, function(i, v)
-		return {
-			i = i,
-			v = v,
-			k = key_selector(v),
-		}
-	end)
-
-	-- In Lua, a compare function(a,b) is expected to return a < b.
-	-- If a == b, the result is expected to be false.
-	local function comparer(a, b)
-		if a.k == b.k then
-			return a.i < b.i
-		elseif a.k ~= nil then
-			if b.k ~= nil then
-				return a.k < b.k
-			else
-				-- a.k is defined, b.k is nil
-				return not nil_values_first
-			end
-		else
-			-- a.k is nil, b.k is defined
-			return nil_values_first
-		end
-	end
-
-	table.sort(rows, comparer)
-
-	return map(rows, function(row)
-		return row.v
-	end)
-end
-
-function sorted_by_z_index(source)
+local function sorted_by_z_index(source)
 	local function key_selector(v)
 		return v.z_index
 	end
-	return sorted_by_key(source, key_selector, true)
+	return Utility.sorted_by_key(source, key_selector, true)
 end
 
 -- *********************
@@ -183,7 +117,7 @@ local function get_backdrop_actor_element()
 end
 
 local function get_stage_stat_actor_elements(stage_stat_lines, x, y)
-	local actor_elements = imap(stage_stat_lines, function(i, text)
+	local actor_elements = Utility.imap(stage_stat_lines, function(i, text)
 		local info_actor_y_offset = y
 		local info_actor_y_offset_increment = 24
 
@@ -362,7 +296,7 @@ local function determine_actors()
 		metrics_to_use = actor_elements_metrics_table._default
 	end
 
-	local custom_actor_elements = map(metrics_to_use.elements_info, function(ei)
+	local custom_actor_elements = Utility.map(metrics_to_use.elements_info, function(ei)
 		local x = ei.x
 		local y = ei.y
 
@@ -381,8 +315,8 @@ local function determine_actors()
 		metrics_to_use.stats_info.x, metrics_to_use.stats_info.y)
 
 	local actor_elements = { backdrop_actor_element }
-	push_all(actor_elements, custom_actor_elements)
-	push_all(actor_elements, stage_stat_actor_elements)
+	Utility.push_all(actor_elements, custom_actor_elements)
+	Utility.push_all(actor_elements, stage_stat_actor_elements)
 
 	return actor_elements
 
