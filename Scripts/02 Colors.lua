@@ -27,6 +27,12 @@ ColorSchemeColors = {
 	VeryDeep	= HSV(TintHue + 17,		1,		1),
 
 	Header		= HSV(TintHue - 3,		1,		.35),
+
+	Indicator	= HSV(TintHue - 30,		1,		1),
+
+	FullyOn		= HSV(0,				0,		1),
+	FullyOff	= HSV(0,				0,		1),
+	Extra		= HSV(0,				1,		1),
 }
 
 ColorSchemeColors.DeepSemiAlpha = Alpha(ColorSchemeColors.Deep, 0.5)
