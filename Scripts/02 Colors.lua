@@ -31,7 +31,7 @@ ColorSchemeColors = {
 	Indicator	= HSV(TintHue - 30,		1,		1),
 
 	FullyOn		= HSV(0,				0,		1),
-	FullyOff	= HSV(0,				0,		1),
+	FullyOff	= HSV(0,				0,		0),
 	Extra		= HSV(0,				1,		1),
 }
 

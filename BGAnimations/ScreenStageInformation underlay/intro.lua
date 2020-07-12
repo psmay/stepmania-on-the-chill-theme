@@ -103,7 +103,7 @@ local function get_backdrop_actor_element()
 			Def.Quad {
 				InitCommand = cmd(
 					zoomto, SCREEN_WIDTH, SCREEN_HEIGHT * 0.8;
-					diffuse, color("#000000"); -- FIXME
+					diffuse, ColorSchemeColors.FullyOff;
 					diffusealpha, 0.5);
 			}
 		},
@@ -165,6 +165,41 @@ local COLOR_NORMAL = ColorSchemeColors.FullyOn
 local COLOR_HIGHLIGHT = ColorSchemeColors.Indicator
 local COLOR_EXTRA = ColorSchemeColors.Extra
 
+
+local function kind_display_text(kind, name)
+	return THEME:GetPathG("_StepTech display", "text/" .. kind .. " " .. name)
+end
+
+local function half_display_text(name)
+	return kind_display_text("halfoutline", name)
+end
+
+local function full_display_text(name)
+	return kind_display_text("fulloutline", name)
+end
+
+local NUMERAL_0 = half_display_text("numeral 0")
+local NUMERAL_1 = half_display_text("numeral 1")
+local NUMERAL_2 = half_display_text("numeral 2")
+local NUMERAL_3 = half_display_text("numeral 3")
+local NUMERAL_4 = half_display_text("numeral 4")
+local NUMERAL_5 = half_display_text("numeral 5")
+local NUMERAL_6 = half_display_text("numeral 6")
+local NUMERAL_7 = half_display_text("numeral 7")
+local NUMERAL_8 = half_display_text("numeral 8")
+local NUMERAL_9 = half_display_text("numeral 9")
+
+local WORD_ANOTHER = full_display_text("word another")
+local WORD_DEMO = full_display_text("word demo")
+local WORD_ENDLESS = full_display_text("word endless")
+local WORD_EVENT = full_display_text("word event")
+local WORD_EXTRA = full_display_text("word extra")
+local WORD_FINAL = full_display_text("word final")
+local WORD_MODE = full_display_text("word mode")
+local WORD_NONSTOP = full_display_text("word nonstop")
+local WORD_ONI = full_display_text("word oni")
+local WORD_STAGE = full_display_text("word stage")
+
 local function determine_actors()
 	local stage_info = get_current_stage_info()
 
@@ -176,121 +211,121 @@ local function determine_actors()
 		[1] = {
 			stats_info = { x = 25, y = 105 },
 			elements_info = {
-				{ from_left = false, actor_name = "numeral 1", x = 140, y = 0, zoom = 0.5 },
-				{ from_left = true, actor_name = "word stage", x = -58, y = 15, zoom = 0.5 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
+				{ from_left = false, actor_name = NUMERAL_1, x = 140, y = -45, zoom = 1.0 * 1.5 },
+				{ from_left = true, actor_name = WORD_STAGE, x = -58, y = -10, zoom = SCALE_STAGE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		[2] = {
 			stats_info = { x = 17, y = 105 },
 			elements_info = {
-				{ from_left = false, actor_name = "numeral 2", x = 160, y = 0, zoom = 0.5 },
-				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
+				{ from_left = false, actor_name = NUMERAL_2, x = 160, y = -45, zoom = 1.5 },
+				{ from_left = true, actor_name = WORD_STAGE, x = -108, y = -10, zoom = SCALE_STAGE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		[3] = {
 			stats_info = { x = 17, y = 105 },
 			elements_info = {
-				{ from_left = false, actor_name = "numeral 3", x = 160, y = 0, zoom = 0.5 },
-				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
+				{ from_left = false, actor_name = NUMERAL_3, x = 160, y = -45, zoom = 1.5 },
+				{ from_left = true, actor_name = WORD_STAGE, x = -108, y = -10, zoom = SCALE_STAGE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		[4] = {
 			stats_info = { x = 195, y = 105 },
 			elements_info = {
-				{ from_left = false, actor_name = "numeral 4", x = 160, y = 0, zoom = 0.5 },
-				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
+				{ from_left = false, actor_name = NUMERAL_4, x = 160, y = -45, zoom = 1.5 },
+				{ from_left = true, actor_name = WORD_STAGE, x = -108, y = -10, zoom = SCALE_STAGE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		[5] = {
 			stats_info = { x = 17, y = 105 },
 			elements_info = {
-				{ from_left = false, actor_name = "numeral 5", x = 160, y = 0, zoom = 0.5 },
-				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
+				{ from_left = false, actor_name = NUMERAL_5, x = 160, y = -45, zoom = 1.5 },
+				{ from_left = true, actor_name = WORD_STAGE, x = -108, y = -10, zoom = SCALE_STAGE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		[6] = {
 			stats_info = { x = 17, y = 85 },
 			elements_info = {
-				{ from_left = false, actor_name = "numeral 6", x = 160, y = 0, zoom = 0.5 },
-				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
+				{ from_left = false, actor_name = NUMERAL_6, x = 160, y = -45, zoom = 1.5 },
+				{ from_left = true, actor_name = WORD_STAGE, x = -108, y = -10, zoom = SCALE_STAGE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		[7] = {
 			stats_info = { x = 17, y = 120 },
 			elements_info = {
-				{ from_left = false, actor_name = "numeral 7", x = 160, y = 0, zoom = 0.5 },
-				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
+				{ from_left = false, actor_name = NUMERAL_7, x = 160, y = -45, zoom = 1.5 },
+				{ from_left = true, actor_name = WORD_STAGE, x = -108, y = -10, zoom = SCALE_STAGE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		[8] = {
 			stats_info = { x = 17, y = 85 },
 			elements_info = {
-				{ from_left = false, actor_name = "numeral 8", x = 160, y = 0, zoom = 0.5 },
-				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
+				{ from_left = false, actor_name = NUMERAL_8, x = 160, y = -45, zoom = 1.5 },
+				{ from_left = true, actor_name = WORD_STAGE, x = -108, y = -10, zoom = SCALE_STAGE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		[9] = {
 			stats_info = { x = 17, y = 105 },
 			elements_info = {
-				{ from_left = false, actor_name = "numeral 9", x = 160, y = 0, zoom = 0.5 },
-				{ from_left = true, actor_name = "word stage", x = -108, y = 15, zoom = 0.5 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
+				{ from_left = false, actor_name = NUMERAL_9, x = 160, y = -45, zoom = 1.5 },
+				{ from_left = true, actor_name = WORD_STAGE, x = -108, y = -10, zoom = SCALE_STAGE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		Event = {
 			stats_info = { x = 287, y = 100 },
 			elements_info = {
-				{ from_left = true, actor_name = "word event", x = 0, y = -10, zoom = 0.3 },
-				{ from_left = false, actor_name = "word mode", x = 187.5, y = 62, zoom = 0.3 * SCALE_MODE, color = COLOR_HIGHLIGHT },
+				{ from_left = true, actor_name = WORD_EVENT, x = 0, y = -28, zoom = 0.6 },
+				{ from_left = false, actor_name = WORD_MODE, x = 187.5, y = 55, zoom = 0.6 * SCALE_MODE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		Final = {
 			stats_info = { x = 120, y = 114 },
 			elements_info = {
-				{ from_left = true, actor_name = "word final", x = 0, y = -20, zoom = 0.4 },
-				{ from_left = false, actor_name = "word stage", x = 110, y = 72, zoom = 0.4 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
+				{ from_left = true, actor_name = WORD_FINAL, x = 0, y = -44, zoom = 0.8 },
+				{ from_left = false, actor_name = WORD_STAGE, x = 111, y = 53, zoom = 0.8 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		Extra1 = {
 			stats_info = { x = 162, y = 104 },
 			elements_info = {
-				{ from_left = true, actor_name = "word extra", x = 0, y = -20, zoom = 0.3, color = COLOR_EXTRA },
-				{ from_left = false, actor_name = "word stage", x = 155, y = 72, zoom = 0.3 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
+				{ from_left = true, actor_name = WORD_EXTRA, x = 0, y = -38, zoom = 0.6, color = COLOR_EXTRA },
+				{ from_left = false, actor_name = WORD_STAGE, x = 155, y = 58, zoom = 0.6 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		Extra2 = {
 			stats_info = { x = 162, y = 104 },
 			elements_info = {
-				{ from_left = true, actor_name = "word extra", x = 0, y = -20, zoom = 0.3, color = COLOR_EXTRA },
-				{ from_left = false, actor_name = "word stage", x = 155, y = 72, zoom = 0.3 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
-				{ from_left = true, actor_name = "word another", x = -153, y = -80, zoom = 0.3 * SCALE_ANOTHER },
+				{ from_left = true, actor_name = WORD_EXTRA, x = 0, y = -38, zoom = 0.6, color = COLOR_EXTRA },
+				{ from_left = false, actor_name = WORD_STAGE, x = 155, y = 58, zoom = 0.6 * SCALE_STAGE, color = COLOR_HIGHLIGHT },
+				{ from_left = true, actor_name = WORD_ANOTHER, x = -153, y = -85, zoom = 0.6 * SCALE_ANOTHER },
 			},
 		},
 		Endless = {
 			stats_info = { x = 133, y = 58 },
 			elements_info = {
-				{ from_left = true, actor_name = "word endless", x = 0, y = -10, zoom = 0.23 },
-				{ from_left = false, actor_name = "word mode", x = 217, y = 52, zoom = 0.23 * SCALE_MODE, color = COLOR_HIGHLIGHT },
+				{ from_left = true, actor_name = WORD_ENDLESS, x = 0, y = -24, zoom = 0.46 },
+				{ from_left = false, actor_name = WORD_MODE, x = 217, y = 46, zoom = 0.46 * SCALE_MODE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		Nonstop = {
 			stats_info = { x = 135, y = 42 },
 			elements_info = {
-				{ from_left = true, actor_name = "word nonstop", x = 0, y = -10, zoom = 0.21 },
-				{ from_left = false, actor_name = "word mode", x = 215, y = 40, zoom = 0.21 * SCALE_MODE, color = COLOR_HIGHLIGHT },
+				{ from_left = true, actor_name = WORD_NONSTOP, x = 0, y = -35, zoom = 0.42 },
+				{ from_left = false, actor_name = WORD_MODE, x = 215, y = 35, zoom = 0.42 * SCALE_MODE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		Oni = {
 			stats_info = { x = 238, y = 108 },
 			elements_info = {
-				{ from_left = true, actor_name = "word oni", x = 0, y = -40, zoom = 0.5 },
-				{ from_left = false, actor_name = "word mode", x = 72, y = 50, zoom = 0.5 * SCALE_MODE, color = COLOR_HIGHLIGHT },
+				{ from_left = true, actor_name = WORD_ONI, x = 0, y = -90, zoom = 1.0 },
+				{ from_left = false, actor_name = WORD_MODE, x = 72, y = 38, zoom = 1.0 * SCALE_MODE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		Demo = {
 			stats_info = { x = 52, y = 80 },
 			elements_info = {
-				{ from_left = true, actor_name = "word demo", x = 0, y = -20, zoom = 0.35 },
-				{ from_left = false, actor_name = "word mode", x = 177, y = 70, zoom = 0.35 * SCALE_MODE, color = COLOR_HIGHLIGHT },
+				{ from_left = true, actor_name = WORD_DEMO, x = 0, y = -41, zoom = 0.7 },
+				{ from_left = false, actor_name = WORD_MODE, x = 177, y = 61, zoom = 0.7 * SCALE_MODE, color = COLOR_HIGHLIGHT },
 			},
 		},
 		_default = {
