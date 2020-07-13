@@ -35,5 +35,7 @@ ColorSchemeColors = {
 	Extra		= HSV(0,				1,		1),
 }
 
+ColorSchemeColors.GameOver = ColorSchemeColors.Indicator
+
 ColorSchemeColors.DeepSemiAlpha = Alpha(ColorSchemeColors.Deep, 0.5)
 ColorSchemeColors.HeaderNoAlpha = Alpha(ColorSchemeColors.Header, 0.0)
