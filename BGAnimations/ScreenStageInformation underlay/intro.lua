@@ -6,72 +6,6 @@ local function sorted_by_z_index(source)
 	return Utility.sorted_by_key(source, key_selector, true)
 end
 
--- *********************
-
-local SQ = 480
-
-local function get_current_stage_info()
-	local info = {
-		stage = GAMESTATE:GetCurrentStage(),
-		number = GAMESTATE:GetCurrentStageIndex() + 1,
-		play_mode = GAMESTATE:GetPlayMode(),
-		is_course_mode = GAMESTATE:IsCourseMode(),
-	}
-
-	local should_use_stage_for_short_name_if_mode = {
-		PlayMode_Regular = true,
-		PlayMode_Rave = true,
-		PlayMode_Battle = true,
-	}
-
-	local stage_or_mode = info.play_mode
-	if should_use_stage_for_short_name_if_mode[info.play_mode] then
-		stage_or_mode = info.stage
-	end
-
-	info.short_name = ToEnumShortString(stage_or_mode)
-
-	local stage_with_short_name_uses_number = {
-		["1st"] = true,
-		["2nd"] = true,
-		["3rd"] = true,
-		["4th"] = true,
-		["5th"] = true,
-		["6th"] = true,
-		Next = true,
-	}
-	
-	info.is_numbered_stage = (stage_with_short_name_uses_number[info.short_name] == true)
-	
-	if info.is_course_mode then
-		local course = GAMESTATE:GetCurrentCourse()
-		info.course_title = course:GetDisplayFullTitle()
-		info.course_type = ToEnumShortString(course:GetCourseType()) 
-
-		local trail = GAMESTATE:GetCurrentTrail(GAMESTATE:GetMasterPlayerNumber())
-		local trail_time = SecondsToMSSMsMs(TrailUtil.GetTotalSeconds(trail))
-		local estimated_stage_count = course:GetEstimatedNumStages()
-		local stage_or_stages = estimated_stage_count == 1 and "Stage" or "Stages"
-		info.course_length_info = estimated_stage_count .. " " .. stage_or_stages .. " / " .. trail_time
-	else
-		local song = GAMESTATE:GetCurrentSong()
-		info.song_title = song:GetDisplayFullTitle()
-		info.song_artist = song:GetDisplayArtist()
-		info.song_length_info = SecondsToMSSMsMs(song:MusicLengthSeconds())
-	end
-
-	return info
-end
-
-
-
-
--- **********************
-
-
-
-
-
 local function schedule_delays(actor_elements)
 	local main_initial_delay = 0.3
 	local main_staying_delay = 1.5
@@ -141,18 +75,13 @@ local function get_stage_stat_actor_elements(stage_stat_lines, x, y)
 end
 
 local function get_stage_stat_lines(stage_info)
-	local title_line_text = stage_info.course_title
-	if title_line_text == nil then title_line_text = stage_info.song_title end
-
-	local course_type_or_song_artist_text = stage_info.course_type
-	if course_type_or_song_artist_text == nil then course_type_or_song_artist_text = stage_info.song_artist end
-
-	local length_info_text = stage_info.course_length_info
-	if length_info_text == nil then length_info_text = stage_info.song_length_info end
+	local title_line_text = stage_info.title
+	local course_type_or_artist_text = stage_info.is_course and stage_info.course_type or stage_info.artist
+	local length_info_text = stage_info.length_info
 
 	return {
 		title_line_text,
-		course_type_or_song_artist_text,
+		course_type_or_artist_text,
 		length_info_text,
 	}
 end
@@ -201,7 +130,7 @@ local WORD_ONI = full_display_text("word oni")
 local WORD_STAGE = full_display_text("word stage")
 
 local function determine_actors()
-	local stage_info = get_current_stage_info()
+	local stage_info = Utility.get_current_stage_info()
 
 	local backdrop_actor_element = get_backdrop_actor_element()
 
