@@ -95,39 +95,28 @@ local COLOR_HIGHLIGHT = ColorSchemeColors.Indicator
 local COLOR_EXTRA = ColorSchemeColors.Extra
 
 
-local function kind_display_text(kind, name)
-	return THEME:GetPathG("_StepTech display", "text/" .. kind .. " " .. name)
-end
 
-local function half_display_text(name)
-	return kind_display_text("halfoutline", name)
-end
+local NUMERAL_0 = Smotc.get_rendered_half_outline_text_path("numeral 0")
+local NUMERAL_1 = Smotc.get_rendered_half_outline_text_path("numeral 1")
+local NUMERAL_2 = Smotc.get_rendered_half_outline_text_path("numeral 2")
+local NUMERAL_3 = Smotc.get_rendered_half_outline_text_path("numeral 3")
+local NUMERAL_4 = Smotc.get_rendered_half_outline_text_path("numeral 4")
+local NUMERAL_5 = Smotc.get_rendered_half_outline_text_path("numeral 5")
+local NUMERAL_6 = Smotc.get_rendered_half_outline_text_path("numeral 6")
+local NUMERAL_7 = Smotc.get_rendered_half_outline_text_path("numeral 7")
+local NUMERAL_8 = Smotc.get_rendered_half_outline_text_path("numeral 8")
+local NUMERAL_9 = Smotc.get_rendered_half_outline_text_path("numeral 9")
 
-local function full_display_text(name)
-	return kind_display_text("fulloutline", name)
-end
-
-local NUMERAL_0 = half_display_text("numeral 0")
-local NUMERAL_1 = half_display_text("numeral 1")
-local NUMERAL_2 = half_display_text("numeral 2")
-local NUMERAL_3 = half_display_text("numeral 3")
-local NUMERAL_4 = half_display_text("numeral 4")
-local NUMERAL_5 = half_display_text("numeral 5")
-local NUMERAL_6 = half_display_text("numeral 6")
-local NUMERAL_7 = half_display_text("numeral 7")
-local NUMERAL_8 = half_display_text("numeral 8")
-local NUMERAL_9 = half_display_text("numeral 9")
-
-local WORD_ANOTHER = full_display_text("word another")
-local WORD_DEMO = full_display_text("word demo")
-local WORD_ENDLESS = full_display_text("word endless")
-local WORD_EVENT = full_display_text("word event")
-local WORD_EXTRA = full_display_text("word extra")
-local WORD_FINAL = full_display_text("word final")
-local WORD_MODE = full_display_text("word mode")
-local WORD_NONSTOP = full_display_text("word nonstop")
-local WORD_ONI = full_display_text("word oni")
-local WORD_STAGE = full_display_text("word stage")
+local WORD_ANOTHER = Smotc.get_rendered_text_path("word another")
+local WORD_DEMO = Smotc.get_rendered_text_path("word demo")
+local WORD_ENDLESS = Smotc.get_rendered_text_path("word endless")
+local WORD_EVENT = Smotc.get_rendered_text_path("word event")
+local WORD_EXTRA = Smotc.get_rendered_text_path("word extra")
+local WORD_FINAL = Smotc.get_rendered_text_path("word final")
+local WORD_MODE = Smotc.get_rendered_text_path("word mode")
+local WORD_NONSTOP = Smotc.get_rendered_text_path("word nonstop")
+local WORD_ONI = Smotc.get_rendered_text_path("word oni")
+local WORD_STAGE = Smotc.get_rendered_text_path("word stage")
 
 local function determine_actors()
 	local stage_info = Smotc.get_current_stage_info()

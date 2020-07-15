@@ -132,4 +132,17 @@ function _Smotc.get_current_stage_info()
 	return info
 end
 
+-- Gets the path for a pre-rendered StepTech word.
+function _Smotc.get_rendered_text_path(key, outline_kind)
+	if outline_kind == nil then
+		outline_kind = "fulloutline"
+	end
+	return THEME:GetPathG("_StepTech display", "text/" .. outline_kind .. " " .. key)
+end
+
+-- Gets the path for a pre-rendered StepTech halfoutline word.
+function _Smotc.get_rendered_half_outline_text_path(key)
+	return _Smotc.get_rendered_text_path(key, "halfoutline")
+end
+
 Smotc = _Smotc
