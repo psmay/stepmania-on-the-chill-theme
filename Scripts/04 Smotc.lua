@@ -1,8 +1,8 @@
 
-local _Utility = {}
+local _Smotc = {}
 
 -- Create a new list by applying `transform()` to each element of `source`.
-function _Utility.map(source, transform)
+function _Smotc.map(source, transform)
 	local result = {}
 	local count = #source
 	for i = 1, count do
@@ -12,7 +12,7 @@ function _Utility.map(source, transform)
 end
 
 -- Creates a new list by applying `transform()` to each index and element of `source`.
-function _Utility.imap(source, transform)
+function _Smotc.imap(source, transform)
 	local result = {}
 	local count = #source
 	for i = 1, count do
@@ -22,7 +22,7 @@ function _Utility.imap(source, transform)
 end
 
 -- Appends all elements of `source` to the end of `destination`.
-function _Utility.push_all(destination, source)
+function _Smotc.push_all(destination, source)
 	for i, v in ipairs(source) do
 		table.insert(destination, v)
 	end
@@ -32,10 +32,10 @@ end
 -- This returns a copy of the `source` sorted by the key selected using the `key_selector()` function. A `nil` key is
 -- treated as equal to another `nil` key. Otherwise, a `nil` key is sorted after (if not `nil_values_first`) or before
 -- (if `nil_values_first`) any non-`nil` value. If two keys are equal, the order from the `source` is preserved.
-function _Utility.sorted_by_key(source, key_selector, nil_values_first)
+function _Smotc.sorted_by_key(source, key_selector, nil_values_first)
 	nil_values_first = nil_values_first or false
 
-	local rows = Utility.imap(source, function(i, v)
+	local rows = Smotc.imap(source, function(i, v)
 		return {
 			i = i,
 			v = v,
@@ -63,7 +63,7 @@ function _Utility.sorted_by_key(source, key_selector, nil_values_first)
 
 	table.sort(rows, comparer)
 
-	return Utility.map(rows, function(row)
+	return Smotc.map(rows, function(row)
 		return row.v
 	end)
 end
@@ -79,7 +79,7 @@ end
 -- * artist: Artist (when not is_course)
 -- * course_type: Course type (when is_course)
 -- * length_info: Course stage count and time (when is_course) or song time
-function _Utility.get_current_stage_info()
+function _Smotc.get_current_stage_info()
 	local info = {
 		stage = GAMESTATE:GetCurrentStage(),
 		number = GAMESTATE:GetCurrentStageIndex() + 1,
@@ -132,4 +132,4 @@ function _Utility.get_current_stage_info()
 	return info
 end
 
-Utility = _Utility
+Smotc = _Smotc

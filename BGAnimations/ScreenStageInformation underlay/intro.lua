@@ -3,7 +3,7 @@ local function sorted_by_z_index(source)
 	local function key_selector(v)
 		return v.z_index
 	end
-	return Utility.sorted_by_key(source, key_selector, true)
+	return Smotc.sorted_by_key(source, key_selector, true)
 end
 
 local function schedule_delays(actor_elements)
@@ -51,7 +51,7 @@ local function get_backdrop_actor_element()
 end
 
 local function get_stage_stat_actor_elements(stage_stat_lines, x, y)
-	local actor_elements = Utility.imap(stage_stat_lines, function(i, text)
+	local actor_elements = Smotc.imap(stage_stat_lines, function(i, text)
 		local info_actor_y_offset = y
 		local info_actor_y_offset_increment = 24
 
@@ -130,7 +130,7 @@ local WORD_ONI = full_display_text("word oni")
 local WORD_STAGE = full_display_text("word stage")
 
 local function determine_actors()
-	local stage_info = Utility.get_current_stage_info()
+	local stage_info = Smotc.get_current_stage_info()
 
 	local backdrop_actor_element = get_backdrop_actor_element()
 
@@ -268,7 +268,7 @@ local function determine_actors()
 		metrics_to_use = actor_elements_metrics_table._default
 	end
 
-	local custom_actor_elements = Utility.map(metrics_to_use.elements_info, function(ei)
+	local custom_actor_elements = Smotc.map(metrics_to_use.elements_info, function(ei)
 		local x = ei.x
 		local y = ei.y
 
@@ -288,8 +288,8 @@ local function determine_actors()
 		metrics_to_use.stats_info.x, metrics_to_use.stats_info.y)
 
 	local actor_elements = { backdrop_actor_element }
-	Utility.push_all(actor_elements, custom_actor_elements)
-	Utility.push_all(actor_elements, stage_stat_actor_elements)
+	Smotc.push_all(actor_elements, custom_actor_elements)
+	Smotc.push_all(actor_elements, stage_stat_actor_elements)
 
 	return actor_elements
 
