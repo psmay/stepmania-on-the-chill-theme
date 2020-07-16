@@ -41,10 +41,10 @@ local function create_menu_item(pn, x, y, item_name)
 			self:playcommand("LoseFocus")
 		end,
 		LoseFocusCommand= function(self)
-			self:stopeffect():rotationz(0)
+			self:stoptweening():stopeffect():decelerate(0.1):zoom(1)
 		end,
 		GainFocusCommand= function(self)
-			self:wag():effectperiod(2):effectmagnitude(0, 0, 5)
+			self:stoptweening():glowshift():effectcolor1(ColorSchemeColors.FullyOn):effectcolor2(ColorSchemeColors.Indicator):effectperiod(4):decelerate(0.05):zoom(1.1)
 		end,
 	}
 end
