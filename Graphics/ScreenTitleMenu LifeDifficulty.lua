@@ -15,7 +15,7 @@ return Def.ActorFrame {
 		AltText="";
 		InitCommand=cmd(zoom,0.675;halign,0);
 		OnCommand= function(self)
-			self:shadowlength(1):skewx(-0.125):x(label_text:GetZoomedWidth()+8)
+			self:shadowlength(1):x(label_text:GetZoomedWidth()+8)
 		end,
 	};
 };

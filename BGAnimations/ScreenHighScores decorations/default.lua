@@ -39,7 +39,7 @@ end
 
 t[#t+1] = LoadFont("Common Bold") .. {
 	InitCommand=cmd(settext,stString;x,SCREEN_CENTER_X-220;y,SCREEN_CENTER_Y-168);
-	OnCommand=cmd(skewx,-0.125;diffusebottomedge,color("0.75,0.75,0.75");shadowlength,2);
+	OnCommand=cmd(diffusebottomedge,color("0.75,0.75,0.75");shadowlength,2);
 };
 
 t.OnCommand=cmd(draworder,105);

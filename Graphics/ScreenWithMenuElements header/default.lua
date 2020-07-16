@@ -30,7 +30,7 @@ t[#t+1] = LoadFont(headerFont) .. {
 	Name="HeaderShadow";
 	Text=Screen.String("HeaderText");
 	InitCommand=cmd(x,-SCREEN_CENTER_X+26;y,28;zoom,1;horizalign,left;maxwidth,200);
-	OnCommand=cmd(visible,IsVisible();skewx,-0.125;diffuse,BoostColor(ColorSchemeColors.Deep,0.375););
+	OnCommand=cmd(visible,IsVisible();diffuse,BoostColor(ColorSchemeColors.Deep,0.375););
 	UpdateScreenHeaderMessageCommand=function(self,param)
 		self:settext(param.Header);
 	end;
@@ -47,7 +47,7 @@ t[#t+1] = LoadFont(headerFont) .. {
 	Name="HeaderText";
 	Text=Screen.String("HeaderText");
 	InitCommand=cmd(x,-SCREEN_CENTER_X+24;y,26;zoom,1;horizalign,left;shadowlength,0;maxwidth,200);
-	OnCommand=cmd(visible,IsVisible();skewx,-0.125;diffuse,color("#ffffff"););
+	OnCommand=cmd(visible,IsVisible();diffuse,color("#ffffff"););
 	UpdateScreenHeaderMessageCommand=function(self,param)
 		self:settext(param.Header);
 	end;

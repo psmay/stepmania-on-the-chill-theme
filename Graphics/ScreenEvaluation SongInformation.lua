@@ -14,7 +14,7 @@ return Def.ActorFrame {
 	LoadFont("Common Normal") .. {
 		Name="TextArtist";
 		InitCommand=cmd(y,18;zoom,0.75;maxwidth,256/0.75);
-		OnCommand=cmd(shadowlength,1;skewx,-0.2);
+		OnCommand=cmd(shadowlength,1);
 -- 		TickCommand=cmd(finishtweening;diffusealpha,0;addy,10;addx,10;decelerate,0.25;diffusealpha,1;addy,-10;addx,-10);
 	};
 };

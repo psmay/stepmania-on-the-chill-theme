@@ -34,7 +34,7 @@ t[#t+1] = Def.ActorFrame {
 	};
 	LoadFont("Common Large") .. {
 		Text=Screen.String("Caution");
-		OnCommand=cmd(skewx,-0.125;diffuse,color("#ffd400");strokecolor,ColorDarkTone(color("#ffd400")));
+		OnCommand=cmd(diffuse,color("#ffd400");strokecolor,ColorDarkTone(color("#ffd400")));
 	};
 	LoadFont("Common Normal") .. {
 		Text=Screen.String("CautionText");

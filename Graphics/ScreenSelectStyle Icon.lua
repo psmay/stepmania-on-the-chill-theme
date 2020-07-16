@@ -21,11 +21,11 @@ t[#t+1] = Def.ActorFrame {
 	LoadFont("Common Large")..{
 		Text=string_name;
 		InitCommand=cmd(y,-12;maxwidth,232);
-		OnCommand=cmd(diffuse,Color.Black;shadowlength,1;shadowcolor,color("#ffffff77");skewx,-0.125);
+		OnCommand=cmd(diffuse,Color.Black;shadowlength,1;shadowcolor,color("#ffffff77"));
 	};
 	LoadFont("Common Normal")..{
 		Text=string_expl;
-		InitCommand=cmd(y,27.5;maxwidth,232;skewx,-0.125);
+		InitCommand=cmd(y,27.5;maxwidth,232);
 	};
 
 	LoadActor(THEME:GetPathG("ScreenSelectPlayMode", "icon/_background base"))..{

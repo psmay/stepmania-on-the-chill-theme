@@ -14,7 +14,7 @@ return Def.ActorFrame {
 		AltText="";
 		InitCommand=cmd(x,136;zoom,0.675;halign,0);
 		OnCommand=function(self)
-			self:shadowlength(1):skewx(-0.125):x(label_text:GetZoomedWidth()+8)
+			self:shadowlength(1):x(label_text:GetZoomedWidth()+8)
 			if GetTimingDifficulty() == 9 then
 				self:settext(Screen.String("Hardest Timing"));
 				(cmd(zoom,0.5;diffuse,ColorLightTone( ColorSchemeColors.VeryShallow) ))(self);

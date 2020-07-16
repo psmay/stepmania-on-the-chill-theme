@@ -8,7 +8,7 @@ return Def.ActorFrame {
 	LoadFont("Common Bold") .. {
 		Text=ScreenString("Information");
 		InitCommand=cmd(y,-26);
-		OnCommand=cmd(skewx,-0.125;diffuse,ColorSchemeColors.Deep;shadowlength,2;shadowcolor,BoostColor(ColorSchemeColors.DeepSemiAlpha,0.25))
+		OnCommand=cmd(diffuse,ColorSchemeColors.Deep;shadowlength,2;shadowcolor,BoostColor(ColorSchemeColors.DeepSemiAlpha,0.25))
 	};
 	LoadFont("Common Normal") .. {
 		Text=ScreenString("Jump");

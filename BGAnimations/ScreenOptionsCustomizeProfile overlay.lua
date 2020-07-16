@@ -81,7 +81,7 @@ local number_entry= new_numpad_entry{
 	prompt = LoadFont("Common Bold") .. {
 		Name="prompt",
 		InitCommand=cmd(xy,0,-96);
-		OnCommand=cmd(shadowlength,1;skewx,-0.125;diffusebottomedge,color("#DDDDDD");strokecolor,Color.Outline);
+		OnCommand=cmd(shadowlength,1;diffusebottomedge,color("#DDDDDD");strokecolor,Color.Outline);
 		SetCommand= function(self, params)
 			self:settext(params[1])
 		end

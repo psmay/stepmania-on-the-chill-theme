@@ -68,7 +68,7 @@ for i, pn in ipairs(GAMESTATE:GetEnabledPlayers()) do
 				Name="prompt",
 				Text=THEME:GetString("ScreenHeartEntry", "Heart Rate"),
 				InitCommand=cmd(xy,0,-96);
-				OnCommand=cmd(shadowlength,1;skewx,-0.125;diffusebottomedge,color("#DDDDDD");strokecolor,Color.Outline);
+				OnCommand=cmd(shadowlength,1;diffusebottomedge,color("#DDDDDD");strokecolor,Color.Outline);
 			},
 			max_value= 300,
 			auto_done_value= 100,
@@ -142,7 +142,7 @@ local args= {
 		Name= "explanation", Font= "Common Large",
 		Text= THEME:GetString("ScreenHeartEntry", "Enter Heart Rate"),
 		InitCommand= cmd(xy, SCREEN_CENTER_X, SCREEN_CENTER_Y-128; diffuse, Color.White),
-		OnCommand=cmd(skewx,-0.125;diffuse,ColorSchemeColors.Deep;strokecolor,ColorDarkTone(ColorSchemeColors.Deep))}
+		OnCommand=cmd(diffuse,ColorSchemeColors.Deep;strokecolor,ColorDarkTone(ColorSchemeColors.Deep))}
 	,
 
 	Def.BitmapText{

@@ -4,7 +4,7 @@ local t = Def.ActorFrame{
 		InitCommand=cmd(zoomto,20,20);
 	}; --]]
 	LoadFont("Common normal")..{
-		InitCommand=cmd(shadowlength,1;horizalign,left;zoom,0.45;skewx,-0.125);
+		InitCommand=cmd(shadowlength,1;horizalign,left;zoom,0.45);
 		SetMessageCommand=function(self,param)
 			sString = THEME:GetString("StepsListDisplayRow StepsType",ToEnumShortString(param.StepsType));
 			if param.Steps and param.Steps:IsAutogen() then
