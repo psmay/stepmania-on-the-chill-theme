@@ -51,7 +51,7 @@ local function get_backdrop_actor_element()
 end
 
 local function get_stage_stat_actor_elements(stage_stat_lines, x, y)
-	local actor_elements = Smotc.imap(stage_stat_lines, function(i, text)
+  local actor_elements = Sqib:from(stage_stat_lines):map(function(text, i)
 		local info_actor_y_offset = y
 		local info_actor_y_offset_increment = 24
 
@@ -70,7 +70,7 @@ local function get_stage_stat_actor_elements(stage_stat_lines, x, y)
 			zoom = (i == 3) and 0.75 or 1,
 			z_index = 10,
 		}
-	end)
+  end):to_array()
 	return actor_elements
 end
 
