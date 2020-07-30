@@ -19,26 +19,26 @@ local function sorted_by_z_index_RETURNS_SQIB(source_IS_SQIB)
     }
 end
 
-local function schedule_delays_RETURNS_ARRAY(actor_elements_ARRAY)
+local function schedule_delays_RETURNS_SQIB(actor_elements_SQIB)
   local main_initial_delay = 0.3
   local main_staying_delay = 1.5
   local main_delay_increment = 0.1
   local main_transition_delay = 0.1
 
   local initial_delay = main_initial_delay
-  for i, v in ipairs(actor_elements_ARRAY) do
+  for i, v in actor_elements_SQIB:iterate() do
     v.transition_delay = main_transition_delay
     v.initial_delay = initial_delay
     initial_delay = initial_delay + main_delay_increment
   end
 
   local staying_delay = main_staying_delay
-  for i = #actor_elements_ARRAY, 1, -1 do
-    actor_elements_ARRAY[i].staying_delay = staying_delay
+  for i, v in actor_elements_SQIB:reversed():iterate() do
+    v.staying_delay = staying_delay
     staying_delay = staying_delay + (2 * main_delay_increment)
   end
 
-  return actor_elements_ARRAY
+  return actor_elements_SQIB
 end
 
 local function get_backdrop_actor_element_RETURNS_ELEMENT()
@@ -314,9 +314,10 @@ t[#t+1] = tx
 
 local x_determined_actors_IS_ARRAY = determine_actors_RETURNS_ARRAY()
 
-local scheduled_actor_elements_IS_ARRAY = schedule_delays_RETURNS_ARRAY(x_determined_actors_IS_ARRAY)
+local x_determined_actors_IS_SQIB = Sqib:from(x_determined_actors_IS_ARRAY)
 
-local scheduled_actor_elements_IS_SQIB = Sqib:from(scheduled_actor_elements_IS_ARRAY)
+local scheduled_actor_elements_IS_SQIB = schedule_delays_RETURNS_SQIB(x_determined_actors_IS_SQIB)
+
 local actors = sorted_by_z_index_RETURNS_SQIB(scheduled_actor_elements_IS_SQIB)
   :map(function(v)
     local color = v.color ~= nil and v.color or COLOR_NORMAL
