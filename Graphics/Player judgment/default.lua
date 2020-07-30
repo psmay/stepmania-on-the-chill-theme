@@ -19,23 +19,28 @@ end
 
 local tTotalJudgments = {};
 
-local JudgeCmds = {
-	TapNoteScore_W1 = THEME:GetMetric( "Judgment", "JudgmentW1Command" );
-	TapNoteScore_W2 = THEME:GetMetric( "Judgment", "JudgmentW2Command" );
-	TapNoteScore_W3 = THEME:GetMetric( "Judgment", "JudgmentW3Command" );
-	TapNoteScore_W4 = THEME:GetMetric( "Judgment", "JudgmentW4Command" );
-	TapNoteScore_W5 = THEME:GetMetric( "Judgment", "JudgmentW5Command" );
-	TapNoteScore_Miss = THEME:GetMetric( "Judgment", "JudgmentMissCommand" );
-};
+local TapNoteScoreTable = Sqib:from({
+  { name = "W1", frame = 0 },
+  { name = "W2", frame = 1 },
+  { name = "W3", frame = 2 },
+  { name = "W4", frame = 3 },
+  { name = "W5", frame = 4 },
+  { name = "Miss", frame = 5 },
+})
 
-local ProtimingCmds = {
-	TapNoteScore_W1 = THEME:GetMetric( "Protiming", "ProtimingW1Command" );
-	TapNoteScore_W2 = THEME:GetMetric( "Protiming", "ProtimingW2Command" );
-	TapNoteScore_W3 = THEME:GetMetric( "Protiming", "ProtimingW3Command" );
-	TapNoteScore_W4 = THEME:GetMetric( "Protiming", "ProtimingW4Command" );
-	TapNoteScore_W5 = THEME:GetMetric( "Protiming", "ProtimingW5Command" );
-	TapNoteScore_Miss = THEME:GetMetric( "Protiming", "ProtimingMissCommand" );
-};
+for _,v in TapNoteScoreTable:iterate() do
+  v.tnsname = "TapNoteScore_" .. v.name
+end
+
+local JudgeCmds = TapNoteScoreTable
+  :pairs_to_hash(function(v)
+    return v.tnsname, THEME:GetMetric("Judgment", "Judgment" .. v.name .. "Command") end
+    )
+
+local ProtimingCmds = TapNoteScoreTable
+  :pairs_to_hash(
+    function(v) return v.tnsname, THEME:GetMetric("Protiming", "Protiming" .. v.name .. "Command") end
+    )
 
 local AverageCmds = {
 	Pulse = THEME:GetMetric( "Protiming", "AveragePulseCommand" );
@@ -44,14 +49,9 @@ local TextCmds = {
 	Pulse = THEME:GetMetric( "Protiming", "TextPulseCommand" );
 };
 
-local TNSFrames = {
-	TapNoteScore_W1 = 0;
-	TapNoteScore_W2 = 1;
-	TapNoteScore_W3 = 2;
-	TapNoteScore_W4 = 3;
-	TapNoteScore_W5 = 4;
-	TapNoteScore_Miss = 5;
-};
+local TNSFrames = TapNoteScoreTable
+  :pairs_to_hash(function(v) return v.tnsname, v.frame end)
+
 local t = Def.ActorFrame {};
 t[#t+1] = Def.ActorFrame {
 	LoadActor(THEME:GetPathG("Judgment","Normal")) .. {
