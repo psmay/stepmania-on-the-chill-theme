@@ -41,7 +41,7 @@ local function schedule_delays(actor_elements)
   return actor_elements
 end
 
-local function get_backdrop_actor_element_RETURNS_ELEMENT()
+local function get_backdrop_actor_element()
   local x1 = 0
   local x0 = x1 - SCREEN_WIDTH
   local y = 0
@@ -63,8 +63,8 @@ local function get_backdrop_actor_element_RETURNS_ELEMENT()
   return actor_element
 end
 
-local function get_stage_stat_actor_elements_RETURNS_SQIB(stage_stat_lines_IS_SQIB, x, y)
-  local actor_elements_IS_SQIB = stage_stat_lines_IS_SQIB
+local function get_stage_stat_actor_elements(stage_stat_lines, x, y)
+  local actor_elements = stage_stat_lines
     :map(
       function(text, i)
         local info_actor_y_offset = y
@@ -88,7 +88,7 @@ local function get_stage_stat_actor_elements_RETURNS_SQIB(stage_stat_lines_IS_SQ
       end
     )
 
-  return actor_elements_IS_SQIB
+  return actor_elements
 end
 
 local function get_stage_stat_lines(stage_info)
@@ -138,7 +138,7 @@ local WORD_STAGE = Smotc.get_rendered_text_path("word stage")
 local function determine_actors()
   local stage_info = Smotc.get_current_stage_info()
 
-  local backdrop_actor_element = get_backdrop_actor_element_RETURNS_ELEMENT()
+  local backdrop_actor_element = get_backdrop_actor_element()
 
   local key = stage_info.is_numbered_stage and stage_info.number or stage_info.short_name
 
@@ -293,7 +293,7 @@ local function determine_actors()
       }
     end)
 
-  local stage_stat_actor_elements = get_stage_stat_actor_elements_RETURNS_SQIB(
+  local stage_stat_actor_elements = get_stage_stat_actor_elements(
     get_stage_stat_lines(stage_info),
     metrics_to_use.stats_info.x,
     metrics_to_use.stats_info.y
@@ -311,9 +311,7 @@ local t = Def.ActorFrame {}
 local tx = Def.ActorFrame {}
 t[#t+1] = tx
 
-local x_determined_actors = determine_actors()
-
-local scheduled_actor_elements = schedule_delays(x_determined_actors)
+local scheduled_actor_elements = schedule_delays(determine_actors())
 
 local actors = sorted_by_z_index(scheduled_actor_elements)
   :map(function(v)
