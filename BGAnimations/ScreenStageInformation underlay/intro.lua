@@ -63,9 +63,7 @@ local function get_backdrop_actor_element_RETURNS_ELEMENT()
   return actor_element
 end
 
-local function get_stage_stat_actor_elements_RETURNS_SQIB(stage_stat_lines_IS_FROMABLE, x, y)
-  local stage_stat_lines_IS_SQIB = Sqib:from(stage_stat_lines_IS_FROMABLE)
-
+local function get_stage_stat_actor_elements_RETURNS_SQIB(stage_stat_lines_IS_SQIB, x, y)
   local actor_elements_IS_SQIB = stage_stat_lines_IS_SQIB
     :map(
       function(text, i)
@@ -98,11 +96,11 @@ local function get_stage_stat_lines(stage_info)
   local course_type_or_artist_text = stage_info.is_course and stage_info.course_type or stage_info.artist
   local length_info_text = stage_info.length_info
 
-  return {
+  return Sqib:from({
     title_line_text,
     course_type_or_artist_text,
     length_info_text,
-  }
+  })
 end
 
 local SCALE_STAGE = 0.4
