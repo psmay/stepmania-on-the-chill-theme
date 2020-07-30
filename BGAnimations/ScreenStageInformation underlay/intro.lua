@@ -1,46 +1,47 @@
 
-local function sorted_by_z_index(source)
-  return Sqib
-    :from(source)
+local function nil_then_natural_compare(a, b)
+  -- Augments natural ordering by having nil sort before all non-nil values
+  if a == nil then
+    return b == nil and 0 or -1
+  elseif b == nil then
+    return 1
+  else
+    return (a<b) and -1 or (a>b) and 1 or 0
+  end
+end
+
+local function sorted_by_z_index_RETURNS_SQIB(source_IS_SQIB)
+  return source_IS_SQIB
     :sorted{
       by = function(v, i) return v.z_index end,
-      compare = function(a, b)
-        -- Augments natural ordering by having nil sort before all non-nil values
-        if a == nil then
-          return b == nil and 0 or -1
-        elseif b == nil then
-          return 1
-        else
-          return (a<b) and -1 or (a>b) and 1 or 0
-        end
-      end,
+      compare = nil_then_natural_compare,
       stable = true
     }
 end
 
-local function schedule_delays(actor_elements)
+local function schedule_delays_RETURNS_ARRAY(actor_elements_ARRAY)
   local main_initial_delay = 0.3
   local main_staying_delay = 1.5
   local main_delay_increment = 0.1
   local main_transition_delay = 0.1
 
   local initial_delay = main_initial_delay
-  for i, v in ipairs(actor_elements) do
+  for i, v in ipairs(actor_elements_ARRAY) do
     v.transition_delay = main_transition_delay
     v.initial_delay = initial_delay
     initial_delay = initial_delay + main_delay_increment
   end
 
   local staying_delay = main_staying_delay
-  for i = #actor_elements, 1, -1 do
-    actor_elements[i].staying_delay = staying_delay
+  for i = #actor_elements_ARRAY, 1, -1 do
+    actor_elements_ARRAY[i].staying_delay = staying_delay
     staying_delay = staying_delay + (2 * main_delay_increment)
   end
 
-  return actor_elements
+  return actor_elements_ARRAY
 end
 
-local function get_backdrop_actor_element()
+local function get_backdrop_actor_element_RETURNS_ELEMENT()
   local x1 = 0
   local x0 = x1 - SCREEN_WIDTH
   local y = 0
@@ -62,29 +63,33 @@ local function get_backdrop_actor_element()
   return actor_element
 end
 
-local function get_stage_stat_actor_elements(stage_stat_lines, x, y)
-  local fn = function(text, i)
-    local info_actor_y_offset = y
-    local info_actor_y_offset_increment = 24
+local function get_stage_stat_actor_elements_RETURNS_ARRAY(stage_stat_lines, x, y)
+  local actor_elements_IS_ARRAY = Sqib
+    :from(stage_stat_lines)
+    :map(
+      function(text, i)
+        local info_actor_y_offset = y
+        local info_actor_y_offset_increment = 24
 
-    local info_actor_y = info_actor_y_offset + ((i - 1) * info_actor_y_offset_increment)
-    return {
-      actor = Def.ActorFrame {
-        LoadFont("Common Normal") .. {
-          Text = text;
-          InitCommand = cmd(horizalign, right; vertalign, top);
+        local info_actor_y = info_actor_y_offset + ((i - 1) * info_actor_y_offset_increment)
+        return {
+          actor = Def.ActorFrame {
+            LoadFont("Common Normal") .. {
+              Text = text;
+              InitCommand = cmd(horizalign, right; vertalign, top);
+            }
+          },
+          x0 = x + -SCREEN_WIDTH,
+          x1 = x,
+          y0 = info_actor_y,
+          y1 = info_actor_y,
+          zoom = (i == 3) and 0.75 or 1,
+          z_index = 10,
         }
-      },
-      x0 = x + -SCREEN_WIDTH,
-      x1 = x,
-      y0 = info_actor_y,
-      y1 = info_actor_y,
-      zoom = (i == 3) and 0.75 or 1,
-      z_index = 10,
-    }
-  end
-  local actor_elements = Sqib:from(stage_stat_lines):map(fn):to_array()
-  return actor_elements
+      end
+    )
+    :to_array()
+  return actor_elements_IS_ARRAY
 end
 
 local function get_stage_stat_lines(stage_info)
@@ -131,10 +136,10 @@ local WORD_NONSTOP = Smotc.get_rendered_text_path("word nonstop")
 local WORD_ONI = Smotc.get_rendered_text_path("word oni")
 local WORD_STAGE = Smotc.get_rendered_text_path("word stage")
 
-local function determine_actors()
+local function determine_actors_RETURNS_ARRAY()
   local stage_info = Smotc.get_current_stage_info()
 
-  local backdrop_actor_element = get_backdrop_actor_element()
+  local backdrop_actor_element = get_backdrop_actor_element_RETURNS_ELEMENT()
 
   local key = stage_info.is_numbered_stage and stage_info.number or stage_info.short_name
 
@@ -270,7 +275,9 @@ local function determine_actors()
     metrics_to_use = actor_elements_metrics_table._default
   end
 
-  local custom_actor_elements = Sqib:from(metrics_to_use.elements_info)
+  local elements_info_IS_SQIB = Sqib:from(metrics_to_use.elements_info)
+
+  local customer_actor_elements_IS_SQIB = elements_info_IS_SQIB
     :map(function(ei)
       local x = ei.x
       local y = ei.y
@@ -286,56 +293,57 @@ local function determine_actors()
         color = ei.color,
       }
     end)
-    :to_array()
 
-  local stage_stat_actor_elements = get_stage_stat_actor_elements(
+  local stage_stat_actor_elements = get_stage_stat_actor_elements_RETURNS_ARRAY(
     get_stage_stat_lines(stage_info),
     metrics_to_use.stats_info.x,
     metrics_to_use.stats_info.y
     )
 
-  local actor_elements = Sqib
-    :from_all({backdrop_actor_element}, custom_actor_elements, stage_stat_actor_elements)
+  local actor_elements_IS_ARRAY = Sqib
+    :from_all({backdrop_actor_element}, customer_actor_elements_IS_SQIB, stage_stat_actor_elements)
     :to_array()
 
-  return actor_elements
+  return actor_elements_IS_ARRAY
 
 end
-
-
-
-
-
 
 local t = Def.ActorFrame {}
 local tx = Def.ActorFrame {}
 t[#t+1] = tx
 
-local scheduled_actor_elements = schedule_delays(determine_actors())
+local x_determined_actors_IS_ARRAY = determine_actors_RETURNS_ARRAY()
 
-for i, v in sorted_by_z_index(scheduled_actor_elements):iterate() do
-  local color = v.color ~= nil and v.color or COLOR_NORMAL
-  local zoom = v.zoom ~= nil and v.zoom or 1
+local scheduled_actor_elements_IS_ARRAY = schedule_delays_RETURNS_ARRAY(x_determined_actors_IS_ARRAY)
 
-  tx[#tx+1] = v.actor .. {
-    InitCommand=cmd(
-      diffuse, color;
-      zoom, zoom;
-      diffusealpha, 0;
-      sleep, v.initial_delay;
-      x, v.x0;
-      y, v.y0;
-      diffusealpha, 1;
-      linear, v.transition_delay;
-      x, v.x1;
-      y, v.y1;
-      sleep, v.staying_delay;
-      linear, v.transition_delay;
-      x, v.x0;
-      y, v.y0;
-      diffusealpha, 0);
-  };
+local scheduled_actor_elements_IS_SQIB = Sqib:from(scheduled_actor_elements_IS_ARRAY)
+local actors = sorted_by_z_index_RETURNS_SQIB(scheduled_actor_elements_IS_SQIB)
+  :map(function(v)
+    local color = v.color ~= nil and v.color or COLOR_NORMAL
+    local zoom = v.zoom ~= nil and v.zoom or 1
+
+    return v.actor .. {
+      InitCommand=cmd(
+        diffuse, color;
+        zoom, zoom;
+        diffusealpha, 0;
+        sleep, v.initial_delay;
+        x, v.x0;
+        y, v.y0;
+        diffusealpha, 1;
+        linear, v.transition_delay;
+        x, v.x1;
+        y, v.y1;
+        sleep, v.staying_delay;
+        linear, v.transition_delay;
+        x, v.x0;
+        y, v.y0;
+        diffusealpha, 0);
+    };
+  end)
+
+for _, v in actors:iterate() do
+  tx[#tx+1] = v
 end
-
 
 return t;
