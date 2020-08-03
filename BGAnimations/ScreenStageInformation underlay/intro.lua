@@ -301,8 +301,7 @@ local function determine_elements()
 
   local backdrop_element = get_backdrop_element()
 
-  local custom_elements = Sqib
-    :from(metrics_to_use.metrics_for_elements)
+  local custom_elements = Sqib.from(metrics_to_use.metrics_for_elements)
     :map(get_custom_element)
 
   local stat_elements = get_stat_elements(
@@ -311,8 +310,7 @@ local function determine_elements()
     metrics_to_use.metrics_for_stats.y
     )
 
-  local elements = Sqib
-    :from_all({backdrop_element}, custom_elements, stat_elements)
+  local elements = Sqib.from_all({backdrop_element}, custom_elements, stat_elements)
 
   return elements
 end
