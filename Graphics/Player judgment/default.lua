@@ -19,7 +19,7 @@ end
 
 local tTotalJudgments = {};
 
-local TapNoteScoreTable = Sqib:from({
+local TapNoteScoreTable = Sqib.from({
   { name = "W1", frame = 0 },
   { name = "W2", frame = 1 },
   { name = "W3", frame = 2 },

@@ -202,7 +202,7 @@ local function schedule_delays(elements)
     staying_delay = staying_delay + (2 * main_delay_increment)
   end
 
-  return Sqib:from_array(a, n)
+  return Sqib.from_array(a, n)
 end
 
 local function get_backdrop_element()
@@ -266,7 +266,7 @@ local function get_stat_lines(stage_info)
   local course_type_or_artist_text = stage_info.is_course and stage_info.course_type or stage_info.artist
   local length_info_text = stage_info.length_info
 
-  return Sqib:from({
+  return Sqib.from({
     title_line_text,
     course_type_or_artist_text,
     length_info_text,
