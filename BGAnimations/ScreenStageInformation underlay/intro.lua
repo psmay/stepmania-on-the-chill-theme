@@ -343,8 +343,6 @@ local actors = determine_elements()
 
 local t = Def.ActorFrame {}
 
-for _, v in actors:iterate() do
-  t[#t+1] = v
-end
+actors:copy_into_array(t, #t + 1)
 
 return t;
