@@ -1,4 +1,5 @@
 local c;
+local judgmentActorsHolder;
 local player = Var "Player";
 local function ShowProtiming()
   if GAMESTATE:IsDemonstration() then
@@ -29,17 +30,18 @@ local TapNoteScoreTable = Sqib.from({
 })
 
 for _,v in TapNoteScoreTable:iterate() do
-  v.tnsname = "TapNoteScore_" .. v.name
+  v.tns_name = "TapNoteScore_" .. v.name
+  v.actor_name = "Judgment_" .. v.name
 end
 
 local JudgeCmds = TapNoteScoreTable
   :pairs_to_hash(function(v)
-    return v.tnsname, THEME:GetMetric("Judgment", "Judgment" .. v.name .. "Command") end
+    return v.tns_name, THEME:GetMetric("Judgment", "Judgment" .. v.name .. "Command") end
     )
 
 local ProtimingCmds = TapNoteScoreTable
   :pairs_to_hash(
-    function(v) return v.tnsname, THEME:GetMetric("Protiming", "Protiming" .. v.name .. "Command") end
+    function(v) return v.tns_name, THEME:GetMetric("Protiming", "Protiming" .. v.name .. "Command") end
     )
 
 local AverageCmds = {
@@ -50,10 +52,48 @@ local TextCmds = {
 };
 
 local TNSFrames = TapNoteScoreTable
-  :pairs_to_hash(function(v) return v.tnsname, v.frame end)
+  :pairs_to_hash(function(v) return v.tns_name, v.frame end)
 
 local t = Def.ActorFrame {};
+
+local judgment_actors_frame =
+  Def.ActorFrame {
+    Name="JudgmentActorsHolder",
+    InitCommand=function(self)
+      self
+        :zoom(0.15)
+        :y(-20)
+    end
+  }
+
+TapNoteScoreTable
+  :map(function(v)
+    return LoadActor("Text " .. v.name) .. {
+      Name = v.actor_name,
+      InitCommand = function(self)
+        self
+          :pause()
+          :visible(false)
+      end,
+      OnCommand = THEME:GetMetric("Judgment", "JudgmentOnCommand"),
+      ResetCommand = function(self)
+        self
+          :finishtweening()
+          :stopeffect()
+          :visible(false)
+      end
+    }
+  end)
+  :copy_into_array(judgment_actors_frame, #judgment_actors_frame + 1)
+
+
 t[#t+1] = Def.ActorFrame {
+  Def.ActorFrame {
+    -- This double wrapping seems to be necessary to prevents the judgment commands from changing the absolute zoom of
+    -- the actors.
+    Name="JudgmentActorsHolderHolder",
+    judgment_actors_frame
+  };
 	LoadActor(THEME:GetPathG("Judgment","Normal")) .. {
 		Name="Judgment";
 		InitCommand=cmd(pause;visible,false);
@@ -130,7 +170,11 @@ t[#t+1] = Def.ActorFrame {
 		OnCommand=cmd(diffuse,Color("White");diffusealpha,1);
 	};
 	InitCommand = function(self)
-		c = self:GetChildren();
+		c = self:GetChildren()
+    local judgment_actors = c.JudgmentActorsHolderHolder:GetChildren().JudgmentActorsHolder:GetChildren()
+    for _, v in TapNoteScoreTable:iterate() do
+      v.actor = judgment_actors[v.actor_name]
+    end
 	end;
 
 	JudgmentMessageCommand=function(self, param)
@@ -179,6 +223,15 @@ t[#t+1] = Def.ActorFrame {
 		c.Judgment:visible( not bShowProtiming );
 		c.Judgment:setstate( iFrame );
 		JudgeCmds[param.TapNoteScore](c.Judgment);
+    for _, v in TapNoteScoreTable:iterate() do
+      local actor = v.actor
+      if v.tns_name == param.TapNoteScore then
+        actor:visible(true)
+      else
+        actor:visible(false)
+      end
+    end
+    JudgeCmds[param.TapNoteScore](c.JudgmentActorsHolderHolder)
 		
 		c.ProtimingDisplay:visible( bShowProtiming );
 		c.ProtimingDisplay:settextf("%i",fTapNoteOffset * 1000);
