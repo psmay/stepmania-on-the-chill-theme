@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.043067459"
-     inkscape:cx="12034.564"
-     inkscape:cy="7888.7318"
+     inkscape:zoom="0.12181317"
+     inkscape:cx="16858.607"
+     inkscape:cy="9262.5556"
      inkscape:document-units="pt"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -39,9 +39,9 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1024"
-     inkscape:window-x="0"
-     inkscape:window-y="28"
+     inkscape:window-height="1017"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:snap-object-midpoints="false"
      inkscape:snap-midpoints="false"
@@ -678,93 +678,92 @@
     </g>
     <g
        id="group_ok"
-       inkscape:export-filename="halfoutline word ok (doubleres).png"
+       inkscape:export-filename="fulloutline judgment ok (doubleres).png"
        inkscape:export-xdpi="57.60284"
        inkscape:export-ydpi="57.60284">
       <rect
-         style="fill:none;fill-opacity:1;stroke:none;stroke-width:92.49904633;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:94.7832489;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
          id="rect1296"
-         width="352.77792"
+         width="370.41629"
          height="388.05557"
-         x="1937.0021"
+         x="1928.1829"
          y="-776.70612" />
       <path
          id="path1173"
          transform="matrix(0.26458335,0,0,0.26458335,-170.84525,-1517.5394)"
          d="M 8666.666,3266.668 V 3400 h -133.334 -5.998 -460.668 c -38.6668,0 -66.666,29.3346 -66.666,66.668 v 466.666 c 0,38.6667 27.9992,66.666 66.666,66.666 h 466.666 c 37.3334,0 65.334,-27.9993 65.334,-66.666 v -400.002 h 68 V 4000 H 8800 v -225.332 l 333.332,166.666 V 4000 h 133.334 v -100 c 0,-29.3333 -17.3342,-49.3327 -37.334,-58.666 l -302.666,-152 298.666,-128 c 22.6666,-9.3334 41.334,-29.334 41.334,-61.334 v -100 h -133.334 v 57.334 L 8800,3600 v -333.332 z m -533.334,266.666 h 333.334 v 333.334 h -333.334 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:66.66666412;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:133.33332825;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill"
          inkscape:connector-curvature="0" />
     </g>
     <g
        id="group_ng"
-       inkscape:export-filename="halfoutline word ng (doubleres).png"
+       inkscape:export-filename="fulloutline judgment ng (doubleres).png"
        inkscape:export-xdpi="57.60284"
        inkscape:export-ydpi="57.60284">
       <rect
          y="-776.70612"
-         x="2360.3354"
+         x="2351.5161"
          height="388.05557"
-         width="352.7778"
+         width="370.41632"
          id="rect1298"
-         style="fill:none;fill-opacity:1;stroke:none;stroke-width:92.49903107;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill" />
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:94.78325653;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill" />
       <path
          id="path1177"
          transform="matrix(0.26458335,0,0,0.26458335,-170.84525,-1517.5394)"
          d="m 10332,3400 c -37.334,1.3334 -65.334,29.3346 -65.334,66.668 v 399.998 H 10200 v -399.998 c 0,-37.3334 -29.334,-65.334 -66.668,-65.334 H 9600 V 4000 h 133.332 v -466.666 h 333.334 V 4000 h 38.668 94.666 133.332 44.668 355.332 v 66.668 h -466.666 V 4200 H 10800 c 37.333,0 65.332,-27.9993 65.332,-66.666 V 3400 Z m 68,133.334 h 333.332 v 333.334 H 10400 Z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:66.66666412;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:133.33332825;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill"
          inkscape:connector-curvature="0" />
     </g>
     <g
        id="group_flawless"
-       inkscape:export-filename="halfoutline word flawless (doubleres).png"
+       inkscape:export-filename="fulloutline judgment flawless (doubleres).png"
        inkscape:export-xdpi="57.60284"
        inkscape:export-ydpi="57.60284">
       <rect
-         style="fill:none;fill-opacity:1;stroke:none;stroke-width:164.16949463;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:165.46730042;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
          id="rect1300"
-         width="1111.2501"
+         width="1128.8888"
          height="388.05557"
-         x="2783.6687"
+         x="2774.8494"
          y="-776.70612" />
       <path
          sodipodi:nodetypes="csccccccccccccccccccccccccssccccscccscccccssscccccssccccsssscccccssscccccccccsscsccssccccccccccc"
          inkscape:connector-curvature="0"
          id="path1181"
-         transform="matrix(0.26458335,0,0,0.26458335,-170.84525,-1517.5394)"
-         d="m 11266.667,3266.6663 c -38.667,1.3333 -65.69,30.6665 -65.626,67.9997 v 666.666 l 132.293,-1.332 v -400 h 200 v -133.332 h -200 V 3400 h 113.332 86.668 67.709 v 600 h 1532.521 v -600 h -133.334 v 466.668 h -133.334 V 3400 h -133.332 v 466.668 H 12600.23 V 3400 h -133.334 l 1.168,466.666 h -66.502 v -399.998 c 0,-37.3334 -29.332,-66.668 -66.666,-66.668 h -533.334 v 133.334 h 466.668 V 3600 h -400 c -38.665,0 -66.667,29.3346 -66.668,66.668 v 199.998 h -67.187 l 1.041,-532 c 0.07,-37.3332 -30.375,-66.6677 -67.708,-66.6677 z M 13202.605,3268 v 732 h 1400.522 c 37.333,0 65.332,-27.9993 65.332,-66.666 v -266.666 c 0,-37.3334 -27.999,-66.668 -65.332,-66.668 h -400.002 v -66.666 h 466.668 v 0 h 66.666 v 133.336 c 0,38.6666 28,66.666 66.666,66.666 h 400.002 v 133.334 h -466.668 V 4000 h 533.334 c 37.333,0 65.334,-27.9993 65.334,-66.666 v -266.666 c 0,-37.3334 -28.001,-66.668 -65.334,-66.668 h -400 v -66.666 h 466.666 V 3400 h -1200 c -38.666,0 -66.666,29.3346 -66.666,66.668 v 200 c 0,38.6666 28,66.666 66.666,66.666 h 400 v 133.334 h -403.127 v 0 h -200 v 0 h -396.873 v -133.334 h 466.666 v -266.666 c 0,-37.3334 -29.333,-66.668 -66.666,-66.668 h -466.666 c -38.666,1.3334 -66.668,29.3346 -66.668,66.668 v 399.998 h -67.186 v -533.332 c 0,-37.3333 -29.333,-65.334 -66.668,-65.334 z m 333.854,265.334 h 333.334 V 3600 h -333.334 z m -1601.563,200 h 333.334 v 133.334 h -333.334 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:66.66666412;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill" />
+         d="m 2809.8392,-653.2379 c -10.2256,0.35278 -17.3718,8.11418 -17.3549,17.99233 v 176.39605 l 34.9851,-0.35244 v -105.83773 h 52.8904 v -35.2789 h -52.8904 v -17.63997 h 29.9709 22.9195 17.9058 v 158.7566 h 405.2781 v -158.7566 h -35.2604 v 123.47771 h -35.2605 v -123.47771 h -35.2599 v 123.47771 h -35.2604 v -123.47771 h -35.2604 l 0.3088,123.47718 h -17.5865 v -105.83721 c 0,-9.8782 -7.7569,-17.63997 -17.63,-17.63997 h -141.0412 v 35.27942 h 123.4113 v 17.63945 h -105.7808 c -10.225,0 -17.6302,7.76177 -17.6305,17.63997 v 52.91834 h -17.7677 l 0.2753,-140.76419 c 0.019,-9.87815 -8.0328,-17.63989 -17.9055,-17.63989 z m 511.9625,0.35289 v 193.68305 h 370.3707 c 9.8728,0 17.2772,-7.40845 17.2772,-17.63944 v -70.55832 c 0,-9.8782 -7.4044,-17.63997 -17.2772,-17.63997 h -105.7813 v -17.63945 h 123.4113 v 0 h 17.6299 v 35.27995 c 0,10.23096 7.4047,17.63945 17.63,17.63945 h 105.7813 v 35.27942 h -123.4113 v 35.27836 h 141.0412 c 9.8728,0 17.2777,-7.40845 17.2777,-17.63944 v -70.55832 c 0,-9.8782 -7.4049,-17.63997 -17.2777,-17.63997 h -105.7807 v -17.63945 h 123.4107 v -35.27942 h -317.3423 c -10.2253,0 -17.63,7.76177 -17.63,17.63997 v 52.91887 c 0,10.23097 7.4047,17.63945 17.63,17.63945 h 105.7807 v 35.27942 h -106.6077 v 0 h -52.8903 v 0 H 3410.09 v -35.27942 h 123.4107 v -70.55832 c 0,-9.8782 -7.7571,-17.63997 -17.6299,-17.63997 h -123.4107 c -10.2253,0.35281 -17.6305,7.76177 -17.6305,17.63997 v 105.83721 h -17.7675 v -141.11663 c 0,-9.87818 -7.7571,-17.287 -17.6304,-17.287 z m 88.2883,70.20587 h 88.1508 v 17.63945 H 3410.09 Z m -423.5364,52.91887 h 88.1509 v 35.27942 h -88.1509 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:35.26974869;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill" />
     </g>
     <g
        id="group_perfect"
-       inkscape:export-filename="halfoutline word perfect (doubleres).png"
+       inkscape:export-filename="fulloutline judgment perfect (doubleres).png"
        inkscape:export-xdpi="57.60284"
        inkscape:export-ydpi="57.60284">
       <rect
          y="-776.70612"
-         x="4053.6687"
+         x="4044.8491"
          height="388.05557"
-         width="1058.3337"
+         width="1075.9722"
          id="rect1302"
-         style="fill:none;fill-opacity:1;stroke:none;stroke-width:160.21304321;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill" />
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:161.54260254;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill" />
       <path
          sodipodi:nodetypes="csccccscccccccscccccccccccsccccsscccccccccccssccsccccsscccccccscccccccccccccccccc"
          inkscape:connector-curvature="0"
          id="path1201"
          transform="matrix(0.26458335,0,0,0.26458335,-170.84525,-1517.5394)"
          d="m 17866.145,3266.668 c -38.667,1.3333 -66.666,29.3327 -66.666,66.666 V 4000 h 133.335 v -400 h 267.706 v 333.334 c 0,38.6667 27.999,66.666 66.666,66.666 h 1200 v -133.332 h -466.665 v -333.334 c 177.511,0 355.023,0 532.534,0 l 0.8,400.002 c 0,38.6667 27.998,66.666 65.331,66.666 h 333.334 V 3866.67 h -266.665 v -333.334 h 266.665 V 3400 h -266.665 v -133.332 h -133.335 l 0.267,133.332 h -598.932 c -38.667,1.3334 -66.669,29.3346 -66.669,66.668 v 399.998 c -177.777,10e-4 -355.552,0 -533.331,0 v -133.334 h 466.665 v -266.666 c 0,-37.3334 -29.333,-66.668 -66.666,-66.668 h -466.668 c -38.667,1.3334 -66.665,29.3336 -66.666,66.666 -89.237,-2e-4 -178.469,0 -267.706,0 V 3400 h 200 V 3266.668 Z M 16000,3401.334 V 4200 h 133.332 v -200 h 400 c 37.334,0 65.334,-27.9987 65.334,-65.332 v -401.336 h 68 v 400.002 c 0,38.6667 28,66.666 66.666,66.666 h 733.334 v -466.666 h 266.666 v -66.666 c 0,-37.3334 -29.332,-65.334 -66.666,-65.334 h -333.334 v 465.332 H 17200 v 0 h -400 v -133.334 h 466.666 v -266.666 c 0,-37.3334 -29.333,-66.668 -66.666,-66.668 -401.604,-0.8815 -799.224,1.334 -1200,1.334 z m 133.332,132 h 333.334 v 333.334 h -333.334 z m 666.668,0 h 333.332 V 3600 H 16800 Z m 1533.855,0 h 333.333 V 3600 h -333.333 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:66.66666412;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill" />
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:133.33332825;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill" />
     </g>
     <g
        id="group_great"
-       inkscape:export-filename="halfoutline word great (doubleres).png"
+       inkscape:export-filename="fulloutline judgment great (doubleres).png"
        inkscape:export-xdpi="57.60284"
        inkscape:export-ydpi="57.60284">
       <rect
-         style="fill:none;fill-opacity:1;stroke:none;stroke-width:137.19821167;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:138.74847412;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
          id="rect1304"
-         width="776.11102"
+         width="793.74927"
          height="388.05557"
-         x="5217.8359"
+         x="5209.0166"
          y="-776.70612" />
       <path
          sodipodi:nodetypes="cccssccccssccccccsccccccsssccccscccccccccsccccccccccccccccccccccccc"
@@ -772,39 +771,39 @@
          id="path1217"
          transform="matrix(0.26458335,0,0,0.26458335,-170.84525,-1517.5394)"
          d="m 22864.812,3266.668 1.202,599.998 h -66.535 v -399.998 c 0,-37.3334 -29.334,-66.668 -66.667,-66.668 h -533.333 v 133.334 h 466.667 V 3600 h -400 c -38.666,0 -66.667,29.3346 -66.667,66.668 v 199.998 h -172.813 v 0 h -360.52 v -133.334 h 466.666 v -266.666 c 0,-37.3334 -29.332,-66.668 -66.666,-66.668 l -999.48,1.334 v 465.332 h -68 V 3400 h -533.332 c -37.333,1.3334 -65.334,29.3346 -65.334,66.668 v 466.666 c 0,38.6667 27.999,66.666 66.666,66.666 h 400 v 66.668 H 20400 V 4200 h 533.332 c 37.333,0 65.333,-27.9993 65.334,-66.666 V 4000 h 68 66.668 66.666 v -466.666 h 266.666 v 0 h 66.146 v 400.002 c 0,38.6667 27.999,66.666 66.667,66.666 h 1665.333 V 3866.67 h -266.666 v -333.334 h 266.666 V 3400 h -266.666 v -133.332 z m -2331.478,266.666 h 333.332 v 333.334 h -333.332 z m 1132.812,0 h 333.333 V 3600 h -333.333 z m 666.666,200 h 333.334 v 133.334 h -333.334 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:66.66666412;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill" />
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:133.33332825;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill" />
     </g>
     <g
        id="group_good"
-       inkscape:export-filename="halfoutline word good (doubleres).png"
+       inkscape:export-filename="fulloutline judgment good (doubleres).png"
        inkscape:export-xdpi="57.60284"
        inkscape:export-ydpi="57.60284">
       <rect
          y="-776.70612"
-         x="6064.5024"
+         x="6055.6826"
          height="388.05557"
-         width="705.5553"
+         width="723.19507"
          id="rect1306"
-         style="fill:none;fill-opacity:1;stroke:none;stroke-width:130.81333923;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill" />
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:132.43849182;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill" />
       <path
          sodipodi:nodetypes="cccsccccsssccccssccsccssssccssccccccccccccccccccccccc"
          inkscape:connector-curvature="0"
          id="path1227"
          transform="matrix(0.26458335,0,0,0.26458335,-170.84525,-1517.5394)"
          d="M 26066.666,3266.668 V 3400 h -1733.334 c -38.667,0 -66.666,29.3346 -66.666,66.668 v 399.998 h -67.998 V 3400 h -533.334 c -37.333,1.3334 -65.334,29.3346 -65.334,66.668 v 466.666 c 0,38.6667 28,66.666 66.666,66.666 h 400.002 v 66.668 H 23600 V 4200 h 533.334 c 37.333,0 65.334,-27.9993 65.334,-66.666 V 4000 H 24800 c 37.333,0 65.332,-27.9993 65.332,-66.666 v -400.002 h 68.002 v 400.002 c 0,38.6667 28,66.666 66.666,66.666 h 466.668 c 37.333,0 65.332,-27.9993 65.332,-66.666 v -400.002 h 68 v 400.002 c 0,38.6667 28,66.666 66.666,66.666 H 26200 v -733.332 z m -2333.332,266.666 h 333.334 v 333.334 h -333.334 z m 666.666,0 h 333.332 v 333.334 H 24400 Z m 666.666,0 H 25400 v 333.334 h -333.334 z m 666.666,0 h 333.334 v 333.334 h -333.334 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:66.66666412;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill" />
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:133.33332825;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill" />
     </g>
     <g
        id="group_bad"
-       inkscape:export-filename="halfoutline word bad (doubleres).png"
+       inkscape:export-filename="fulloutline judgment bad (doubleres).png"
        inkscape:export-xdpi="57.60284"
        inkscape:export-ydpi="57.60284">
       <rect
-         style="fill:none;fill-opacity:1;stroke:none;stroke-width:113.28772736;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:115.16051483;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
          id="rect1308"
-         width="529.16693"
+         width="546.80713"
          height="388.05557"
-         x="6840.6138"
+         x="6831.7935"
          y="-776.70612" />
       <path
          sodipodi:nodetypes="ccssccscccccsscccccsssccccccccccccccccccc"
@@ -812,26 +811,26 @@
          id="path1235"
          transform="matrix(0.26458335,0,0,0.26458335,-170.84525,-1517.5394)"
          d="M 28333.332,3266.668 V 3400 h -400 c -38.666,0 -66.666,29.3346 -66.666,66.668 v 399.998 H 27800 v -399.998 c 0,-37.3334 -29.334,-66.668 -66.668,-66.668 l -1066.666,1.334 V 3268 h -133.334 v 732 h 533.334 c 37.333,0 65.334,-27.9987 65.334,-65.332 v -401.336 h 68 v 0 h 466.666 V 3600 h -400 c -38.666,0 -66.666,29.3346 -66.666,66.668 v 266.666 c 0,38.6667 28,66.666 66.666,66.666 h 1200 v -733.332 z m -1666.666,266.666 H 27000 v 333.334 h -333.334 z m 1333.334,0 h 333.332 v 333.334 H 28000 Z m -666.668,200 h 333.334 v 133.334 h -333.334 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:66.66666412;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill" />
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:133.33332825;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill" />
     </g>
     <g
        id="group_miss"
-       inkscape:export-filename="halfoutline word miss (doubleres).png"
+       inkscape:export-filename="fulloutline judgment miss (doubleres).png"
        inkscape:export-xdpi="57.60284"
        inkscape:export-ydpi="57.60284">
       <rect
          y="-776.70612"
-         x="7440.3359"
+         x="7431.5161"
          height="388.05557"
-         width="599.72241"
+         width="617.36249"
          id="rect1310"
-         style="fill:none;fill-opacity:1;stroke:none;stroke-width:120.60398102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill" />
+         style="fill:none;fill-opacity:1;stroke:none;stroke-width:122.36483002;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill" />
       <path
          sodipodi:nodetypes="cccccssccccccccccccccsscccccsssccccsssscccccssccccc"
          inkscape:connector-curvature="0"
          id="path1241"
-         d="m 7650.0956,-617.95893 v 0.35297 h -6.7757 v 123.12363 h -17.9022 v -105.83671 c 0,-9.87816 -7.7556,-17.28692 -17.6263,-17.28692 h -158.6391 v 17.28692 141.11596 h 35.2528 v -123.4766 h 35.2533 v 123.4766 h 35.2527 v -123.4766 h 35.2533 v 123.4766 c 29.4696,0 58.9392,0 88.4088,0 v -123.47713 h 17.7639 v 35.27979 c 0,10.23091 7.4028,17.63936 17.6263,17.63936 h 105.7594 v 35.27926 h -123.3857 v 35.27872 c 105.7593,0 211.5187,0 317.278,0 9.8708,0 17.2737,-7.40842 17.2737,-17.63936 v -70.55798 c 0,-9.87816 -7.4029,-17.63989 -17.2737,-17.63989 h -105.7593 v -17.63937 h 123.3857 v -35.27925 h -141.0126 c -10.2233,0 -17.6264,7.76173 -17.6264,17.63989 v 52.91862 c 0,10.23091 7.4031,17.63936 17.6264,17.63936 h 105.7593 v 35.27926 h -100.8841 v 0 h -40.4807 v -52.91809 c 0,-9.87816 -7.4034,-17.63989 -17.2742,-17.63989 h -105.7594 v -17.63937 h 123.3863 v -35.27978 c -68.2936,0 -136.5869,0 -204.8805,0 z"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:17.6330471;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill" />
+         d="m 7650.0981,-617.96177 v 0.35297 h -6.7757 v 123.12363 h -17.9022 v -105.83671 c 0,-9.87816 -7.7556,-17.28692 -17.6263,-17.28692 h -158.6391 v 17.28692 141.11596 h 35.2528 v -123.4766 h 35.2533 v 123.4766 h 35.2527 v -123.4766 h 35.2533 v 123.4766 c 29.4696,0 58.9392,0 88.4088,0 v -123.47713 h 17.7639 v 35.27979 c 0,10.23091 7.4028,17.63936 17.6263,17.63936 h 105.7594 v 35.27926 h -123.3857 v 35.27872 c 105.7593,0 211.5187,0 317.278,0 9.8708,0 17.2737,-7.40842 17.2737,-17.63936 v -70.55798 c 0,-9.87816 -7.4029,-17.63989 -17.2737,-17.63989 h -105.7593 v -17.63937 h 123.3857 v -35.27925 h -141.0126 c -10.2233,0 -17.6264,7.76173 -17.6264,17.63989 v 52.91862 c 0,10.23091 7.4031,17.63936 17.6264,17.63936 h 105.7593 v 35.27926 h -100.8841 v 0 h -40.4807 v -52.91809 c 0,-9.87816 -7.4034,-17.63989 -17.2742,-17.63989 h -105.7594 v -17.63937 h 123.3863 v -35.27978 c -68.2936,0 -136.5869,0 -204.8805,0 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:352.77780151px;line-height:1.25;font-family:STDevGen_1stMix;-inkscape-font-specification:'STDevGen_1stMix, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:35.27777863;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers stroke fill" />
     </g>
     <g
        id="group_ready"

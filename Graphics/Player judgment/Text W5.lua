@@ -1,1 +1,1 @@
-return LoadActor(Smotc.get_rendered_half_outline_text_path("word bad"))
+return LoadActor(Smotc.get_rendered_text_path("judgment bad"))
