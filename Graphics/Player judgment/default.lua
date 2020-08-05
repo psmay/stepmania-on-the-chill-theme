@@ -32,6 +32,7 @@ local TapNoteScoreTable = Sqib.from({
 for _,v in TapNoteScoreTable:iterate() do
   v.tns_name = "TapNoteScore_" .. v.name
   v.actor_name = "Judgment_" .. v.name
+  v.color = GameColor.Judgment["JudgmentLine_" .. v.name]
 end
 
 local JudgeCmds = TapNoteScoreTable
@@ -62,7 +63,7 @@ local judgment_actors_frame =
     InitCommand=function(self)
       self
         :zoom(0.15)
-        :y(-20)
+        :y(-8)
     end
   }
 
@@ -72,6 +73,7 @@ TapNoteScoreTable
       Name = v.actor_name,
       InitCommand = function(self)
         self
+          :diffuse(v.color)
           :pause()
           :visible(false)
       end,
@@ -94,12 +96,6 @@ t[#t+1] = Def.ActorFrame {
     Name="JudgmentActorsHolderHolder",
     judgment_actors_frame
   };
-	LoadActor(THEME:GetPathG("Judgment","Normal")) .. {
-		Name="Judgment";
-		InitCommand=cmd(pause;visible,false);
-		OnCommand=THEME:GetMetric("Judgment","JudgmentOnCommand");
-		ResetCommand=cmd(finishtweening;stopeffect;visible,false);
-	};
 	LoadFont("Combo Numbers") .. {
 		Name="ProtimingDisplay";
 		Text="";
@@ -185,18 +181,6 @@ t[#t+1] = Def.ActorFrame {
 		if param.Player ~= player then return end;
 		if param.HoldNoteScore then return end;
 		
-		local iNumStates = c.Judgment:GetNumStates();
-		local iFrame = TNSFrames[param.TapNoteScore];
-		
-		if not iFrame then return end
-		if iNumStates == 12 then
-			iFrame = iFrame * 2;
-			if not param.Early then
-				iFrame = iFrame + 1;
-			end
-		end
-		
-
 		local fTapNoteOffset = param.TapNoteOffset;
 		if param.HoldNoteScore then
 			fTapNoteOffset = 1;
@@ -220,9 +204,7 @@ t[#t+1] = Def.ActorFrame {
 		
 		self:playcommand("Reset");
 
-		c.Judgment:visible( not bShowProtiming );
-		c.Judgment:setstate( iFrame );
-		JudgeCmds[param.TapNoteScore](c.Judgment);
+		c.JudgmentActorsHolderHolder:visible( not bShowProtiming );
     for _, v in TapNoteScoreTable:iterate() do
       local actor = v.actor
       if v.tns_name == param.TapNoteScore then
